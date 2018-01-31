@@ -1,0 +1,18 @@
+<div>
+  <%= form_for @show do |f| %>
+    <h3>CREATE SHOW</h3>
+
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+    <div><%= f.label :city %></div>
+    <div><%= f.text_field :city %></div>
+    <div><%= f.label :date %></div>
+    <div><%= f.date_field :date %></div>
+
+    <div><%= f.submit "Add Show!", class: "submit-button" %></div>
+  <% end %>
+
+  <div>
+    <h3> <%= link_to "ALREADY HAVE AN ACCOUNT?", login_path %></h3>
+  </div>
+</div>

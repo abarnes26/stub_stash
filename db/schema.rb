@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113191759) do
+ActiveRecord::Schema.define(version: 20180131150854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "band_users", force: :cascade do |t|
+    t.bigint "band_id"
+    t.bigint "user_id"
+    t.index ["band_id"], name: "index_band_users_on_band_id"
+    t.index ["user_id"], name: "index_band_users_on_user_id"
+  end
 
   create_table "bands", force: :cascade do |t|
     t.string "name"
@@ -41,6 +48,8 @@ ActiveRecord::Schema.define(version: 20180113191759) do
     t.string "state"
   end
 
+  add_foreign_key "band_users", "bands"
+  add_foreign_key "band_users", "users"
   add_foreign_key "shows", "bands"
   add_foreign_key "shows", "users"
   add_foreign_key "shows", "venues"

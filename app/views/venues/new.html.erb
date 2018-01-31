@@ -6,13 +6,9 @@
     <div><%= f.text_field :name %></div>
     <div><%= f.label :city %></div>
     <div><%= f.text_field :city %></div>
-    <div><%= f.label :state %></div>
+    <div><%= f.label :state%></div>
     <div><%= f.select :state, us_states %></div>
 
     <div><%= f.submit "Add Venue!", class: "submit-button" %></div>
   <% end %>
-
-  <div>
-    <h3> <%= link_to "ALREADY HAVE AN ACCOUNT?", login_path %></h3>
-  </div>
 </div>
