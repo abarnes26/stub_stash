@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources "users", only: [:new, :create, :edit, :destroy]
+  resources "bands", only: [:index, :new, :create]
+  resources "shows", only: [:index]
 end
