@@ -1,0 +1,16 @@
+<div>
+  <%= form_for @user do |f| %>
+    <h3>CREATE ACCOUNT</h3>
+
+    <div><%= f.label :username, class: "form-label" %></div>
+    <div><%= f.text_field :username %></div>
+    <div><%= f.label :password, class: "form-label" %></div>
+    <div><%= f.password_field :password %></div>
+
+    <div><%= f.submit "Create Account", class: "submit-button" %></div>
+  <% end %>
+
+  <div>
+    <h3> <%= link_to "ALREADY HAVE AN ACCOUNT?", login_path %></h3>
+  </div>
+</div>
