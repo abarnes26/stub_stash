@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources "users", only: [:new, :create, :edit, :destroy]
   resources "bands", only: [:index, :new, :create]
+  resources "venues", only: [:index, :new, :create]
   resources "shows", only: [:index]
 end
