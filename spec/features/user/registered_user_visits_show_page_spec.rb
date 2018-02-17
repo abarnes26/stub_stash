@@ -46,6 +46,7 @@ feature "A registered user visits the show page" do
   it "can add a new show from the show page" do
     user = create(:user)
     band = create(:band)
+    BandUser.create(user: user, band: band)
     venue = create(:venue)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -56,16 +57,17 @@ feature "A registered user visits the show page" do
     expect(current_path).to eq(new_show_path)
 
     select "#{band.name}", from: "show[band]"
-    select "#{venue.name}", from:"show[venue]"
-    page.execute_script("$('#show_date').val('20/2/2017')")
+    select "#{venue.name}", from: "show[venue]"
+    fill_in "show[date]", with: "20/1/2017"
 
     click_on "Add Show!"
 
     expect(current_path).to eq(shows_path)
 
-    expect(page).to have_content("Shows: 1")
-    expect(page).to have_content("New show has been added!")
+    expect(page).to have_content("Show Count: 1")
+    expect(page).to have_content("A New show has been added to your stub stash!")
     expect(page).to have_content("Bands you've seen: #{band.name}")
     expect(page).to have_content("Venues you've been to: #{venue.name}")
   end
+
 end

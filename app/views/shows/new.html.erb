@@ -1,0 +1,15 @@
+<div>
+  <%= form_for @show do |f| %>
+    <h3>ADD A SHOW</h3>
+
+    <div><%= f.label :band %></div>
+    <div><%= f.select :band, current_user.bands.collect {|band| band.name} %></div>
+    <div><%= f.label :venue %></div>
+    <div><%= f.select :venue, @venues.collect {|venue| venue.name} %></div>
+    <div><%= f.label :date %></div>
+    <div><%= f.date_field :date %></div>
+
+    <div><%= f.submit "Add Show!", class: "submit-button" %></div>
+  <% end %>
+
+</div>
