@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :spotify, ENV['SPOTIFY_CLIENT_KEY'], scope: 'user-follow-read user-read-email'
+  provider :spotify, ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'], scope: 'user-follow-read user-read-email'
 end
