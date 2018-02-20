@@ -13,7 +13,7 @@ class BandsController < ApplicationController
     if @band.save
       BandUser.create(user: current_user, band: @band)
       flash[:notice] = "Nice! Your new band has been added!"
-      redirect_to shows_path
+      redirect_to user_bands_path
     else
       flash[:notice] = "Band was not created"
       render :new

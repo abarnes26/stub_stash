@@ -1,4 +1,4 @@
-<h1>All of your stubs!</h1>
+<h1> <%= current_user.username %>'s Stub Stash </h1>
 
 <% if current_user.shows %>
   <p>Show Count: <%= current_user.shows.count %> </p>
@@ -14,6 +14,21 @@
   <p>You don't have any stubs in your stash yet!</p>
 <% end %>
 
+<div class="show-list">
+  <% if current_user.shows %>
+    <% current_user.shows.each do |show| %>
+      <div class="show">
+        Date: <%= show.date %>
+        Band: <%= show.band.name %>
+        Venue: <%= show.venue.name %><br>
+        <%= button_to "-", {controller: :shows, method: :delete}, {class: 'delete-show-button'} %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
 <%= link_to "Add A New Band", new_band_path %>
 <%= link_to "Add A New Venue", new_venue_path %>
-<%= link_to "Add A New Show!", new_show_path %>
+<%= link_to "Add A New Show!", new_user_show_path %>

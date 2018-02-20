@@ -1,5 +1,5 @@
 <div>
-  <%= form_for @show do |f| %>
+  <%= form_for @show, :url => user_shows_path do |f| %>
     <h3>ADD A SHOW</h3>
 
     <div><%= f.label :band %></div>

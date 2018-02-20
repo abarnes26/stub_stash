@@ -5,7 +5,7 @@ feature "A registered user visits the show page" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit shows_path
+    visit user_shows_path
     click_on "Add A New Band"
 
     expect(current_path).to eq(new_band_path)
@@ -14,9 +14,7 @@ feature "A registered user visits the show page" do
 
     click_on "Add Band!"
 
-    expect(current_path).to eq(shows_path)
-
-    visit bands_path
+    expect(current_path).to eq(user_bands_path)
 
     expect(page).to have_content("Band 1")
   end
@@ -25,7 +23,7 @@ feature "A registered user visits the show page" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit shows_path
+    visit user_shows_path
     click_on "Add A New Venue"
 
     expect(current_path).to eq(new_venue_path)
@@ -36,7 +34,7 @@ feature "A registered user visits the show page" do
 
     click_on "Add Venue!"
 
-    expect(current_path).to eq(shows_path)
+    expect(current_path).to eq(user_shows_path)
 
     visit venues_path
 
@@ -50,11 +48,11 @@ feature "A registered user visits the show page" do
     venue = create(:venue)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit shows_path
+    visit user_shows_path
 
     click_on "Add A New Show!"
 
-    expect(current_path).to eq(new_show_path)
+    expect(current_path).to eq(new_user_show_path)
 
     select "#{band.name}", from: "show[band]"
     select "#{venue.name}", from: "show[venue]"
@@ -62,7 +60,7 @@ feature "A registered user visits the show page" do
 
     click_on "Add Show!"
 
-    expect(current_path).to eq(shows_path)
+    expect(current_path).to eq(user_shows_path)
 
     expect(page).to have_content("Show Count: 1")
     expect(page).to have_content("A New show has been added to your stub stash!")
@@ -71,5 +69,24 @@ feature "A registered user visits the show page" do
   end
 
   it "can delete a show from the show index" do
+    user = create(:user)
+    show = create(:show, user: user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+    visit user_shows_path
+
+    expect(page).to have_content("Show Count: 1")
+    within ".show" do
+      find(:css, "delete-show-button").click
+    end
+
+    expect(flash[:alert]).to be_present
+
+    within ".flash-message" do
+      select "Yes"
+    end
+
+    expect(current_path).to eq(user_shows_path)
+    expect(page).to have_content("You don't have any stubs in your stash yet!")
+  end
 end
