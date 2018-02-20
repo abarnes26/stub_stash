@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#create"
   get "/dashboard", to: "users#show"
+  get "/auth/spotify/callback", to: "sessions#create"
 
   resources "users", only: [:new, :create, :edit]
   resources "bands", only: [:index, :new, :create]

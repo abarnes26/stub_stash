@@ -1,1 +1,1 @@
-Figaro.require_keys("SPOTIFY_CLIENT_KEY")
+Figaro.require_keys("SPOTIFY_CLIENT_ID", "SPOTIFY_CLIENT_SECRET")
