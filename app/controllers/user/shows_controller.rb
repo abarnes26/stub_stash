@@ -21,7 +21,9 @@ class User::ShowsController < ApplicationController
   end
 
   def destroy
-
+    @show = Show.find(params[:id])
+    @show.delete
+    redirect_to user_shows_path
   end
 
 

@@ -70,21 +70,24 @@ feature "A registered user visits the show page" do
 
   it "can delete a show from the show index" do
     user = create(:user)
-    show = create(:show, user: user)
+    band = create(:band)
+    create(:band_user, user: user, band: band)
+    show = create(:show, user: user, band: band)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit user_shows_path
 
     expect(page).to have_content("Show Count: 1")
+
     within ".show" do
-      find(:css, "delete-show-button").click
+      click_link "-"
     end
 
-    expect(flash[:alert]).to be_present
-
-    within ".flash-message" do
-      select "Yes"
-    end
+    # expect(flash[:alert]).to be_present
+    #
+    # within ".flash-message" do
+    #   select "Yes"
+    # end
 
     expect(current_path).to eq(user_shows_path)
     expect(page).to have_content("You don't have any stubs in your stash yet!")
