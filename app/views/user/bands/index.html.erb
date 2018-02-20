@@ -1,0 +1,5 @@
+<h2>Here are the bands you've added</h2>
+
+<% current_user.bands.each do |band| %>
+  <%= band.name %>
+<% end %>

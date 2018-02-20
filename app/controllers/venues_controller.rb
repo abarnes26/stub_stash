@@ -12,7 +12,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
     if @venue.save
       flash[:notice] = "A New Venue has been created!"
-      redirect_to shows_path
+      redirect_to user_shows_path
     else
       flash[:notice] = "Venue was not created"
       render :new
