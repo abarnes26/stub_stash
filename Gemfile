@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'launchy'
+gem 'omniauth-spotify'
+gem 'figaro'
 
 
 group :development, :test do
