@@ -70,4 +70,6 @@ feature "A registered user visits the show page" do
     expect(page).to have_content("Venues you've been to: #{venue.name}")
   end
 
+  it "can delete a show from the show index" do
+
 end
