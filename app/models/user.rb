@@ -8,16 +8,4 @@ class User < ApplicationRecord
 
   enum role: ["user", "admin"]
 
-  def self.update_with_spotify_info(auth_hash = {})
-    user = User.find_or_create_by(uid: "#{auth_hash['uid']}")
-
-    user["username"] = auth_hash["info"]["nickname"]
-    user["name"] = auth_hash["info"]["name"]
-    user["uid"] = auth_hash["uid"]
-    user["token"] = auth_hash["credentials"]["token"]
-
-    user.save
-    user
-  end
-
 end
