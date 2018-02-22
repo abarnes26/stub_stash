@@ -1,6 +1,6 @@
 <h2>Here are the artists you've added</h2>
 
-<% current_user.artists.each do |artist| %>
+<% current_user.reload.artists.each do |artist| %>
   <%= artist.name %><br>
 <% end %>
 
