@@ -4,11 +4,14 @@ class SpotifyController < ApplicationController
     current_user.spotify_token = auth_hash["credentials"]["token"]
     current_user.save!
     flash[:success] = "Your Spotify has been successfully linked to your Stub Stash!"
-    redirect_to user_bands_path
+    redirect_to user_artists_path
   end
 
   def import
-    FollowingArtists.new(current_user).following_list
+    @user = current_user
+    FollowingArtists.new(@user).following_list
+    flash[:success] = "Artists successfully imported from Spotify!"
+    redirect_to user_artists_path
   end
 
   private

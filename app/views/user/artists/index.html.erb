@@ -1,7 +1,7 @@
 <h2>Here are the artists you've added</h2>
 
 <% current_user.artists.each do |artist| %>
-  <%= artist.name %>
+  <%= artist.name %><br>
 <% end %>
 
 <% unless current_user.spotify_token %>

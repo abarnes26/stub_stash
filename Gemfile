@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-spotify'
 gem 'oauth2'
+gem 'faraday'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
