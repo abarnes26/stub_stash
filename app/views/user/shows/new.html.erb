@@ -2,8 +2,8 @@
   <%= form_for @show, :url => user_shows_path do |f| %>
     <h3>ADD A SHOW</h3>
 
-    <div><%= f.label :band %></div>
-    <div><%= f.select :band, current_user.bands.collect {|band| band.name} %></div>
+    <div><%= f.label :artist %></div>
+    <div><%= f.select :artist, current_user.artists.collect {|artist| artist.name} %></div>
     <div><%= f.label :venue %></div>
     <div><%= f.select :venue, @venues.collect {|venue| venue.name} %></div>
     <div><%= f.label :date %></div>

@@ -1,9 +1,0 @@
-<h2>Here are the bands you've added</h2>
-
-<% current_user.bands.each do |band| %>
-  <%= band.name %>
-<% end %>
-
-<% unless current_user.spotify_token.present? %>
-  <%= link_to "LINK YOUR SPOTIFY TO LOAD BANDS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read" %>
-<% end %>

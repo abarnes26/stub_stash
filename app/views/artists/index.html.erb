@@ -1,0 +1,6 @@
+<h2>Here are all the artists we've got!</h2>
+<p>Don't see yours? Add it <%= link_to "here", new_artist_path %> </p>
+
+<% @artists.each do |artist| %>
+  <%= artist.name %>
+<% end %>

@@ -1,4 +1,4 @@
-class User::BandsController < ApplicationController
+class User::ArtistsController < ApplicationController
 
   def index
   end

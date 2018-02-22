@@ -15,23 +15,23 @@ ActiveRecord::Schema.define(version: 20180221222919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "band_users", force: :cascade do |t|
-    t.bigint "band_id"
+  create_table "artist_users", force: :cascade do |t|
+    t.bigint "artist_id"
     t.bigint "user_id"
-    t.index ["band_id"], name: "index_band_users_on_band_id"
-    t.index ["user_id"], name: "index_band_users_on_user_id"
+    t.index ["artist_id"], name: "index_artist_users_on_artist_id"
+    t.index ["user_id"], name: "index_artist_users_on_user_id"
   end
 
-  create_table "bands", force: :cascade do |t|
+  create_table "artists", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "shows", force: :cascade do |t|
     t.datetime "date"
     t.bigint "user_id"
-    t.bigint "band_id"
+    t.bigint "artist_id"
     t.bigint "venue_id"
-    t.index ["band_id"], name: "index_shows_on_band_id"
+    t.index ["artist_id"], name: "index_shows_on_artist_id"
     t.index ["user_id"], name: "index_shows_on_user_id"
     t.index ["venue_id"], name: "index_shows_on_venue_id"
   end
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20180221222919) do
     t.string "state"
   end
 
-  add_foreign_key "band_users", "bands"
-  add_foreign_key "band_users", "users"
-  add_foreign_key "shows", "bands"
+  add_foreign_key "artist_users", "artists"
+  add_foreign_key "artist_users", "users"
+  add_foreign_key "shows", "artists"
   add_foreign_key "shows", "users"
   add_foreign_key "shows", "venues"
 end
