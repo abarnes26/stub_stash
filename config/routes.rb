@@ -4,15 +4,16 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#create"
   get "/dashboard", to: "users#show"
-  get "/auth/spotify/callback", to: "sessions#create"
+  get "/auth/spotify/callback", to: "spotify#update"
+  get "/spotify-import", to: "spotify#import", as: :spotify_import
 
   resources "users", only: [:new, :create, :edit]
-  resources "bands", only: [:index, :new, :create]
+  resources "artists", only: [:index, :new, :create]
   resources "shows", only: [:index]
   resources "venues", only: [:index, :new, :create]
 
   namespace :user do
     resources "shows", only: [:index, :new, :create, :edit, :destroy]
-    resources "bands", only: [:index, :destroy]
+    resources "artists", only: [:index, :destroy]
   end
 end

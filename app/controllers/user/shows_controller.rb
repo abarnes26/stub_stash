@@ -10,7 +10,7 @@ class User::ShowsController < ApplicationController
   end
 
   def create
-    @show = Show.new(band: band_lookup, venue: venue_lookup, date: show_params[:date], user: current_user)
+    @show = Show.new(artist: artist_lookup, venue: venue_lookup, date: show_params[:date], user: current_user)
     if @show.save
       flash[:notice] = "A New show has been added to your stub stash!"
       redirect_to user_shows_path
@@ -29,11 +29,11 @@ class User::ShowsController < ApplicationController
 
   private
     def show_params
-      params.require(:show).permit(:band, :venue, :date)
+      params.require(:show).permit(:artist, :venue, :date)
     end
 
-    def band_lookup
-      Band.find_by(name: show_params[:band])
+    def artist_lookup
+      Artist.find_by(name: show_params[:artist])
     end
 
     def venue_lookup

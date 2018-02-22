@@ -1,0 +1,11 @@
+<h2>Here are the artists you've added</h2>
+
+<% current_user.reload.artists.each do |artist| %>
+  <%= artist.name %><br>
+<% end %>
+
+<% unless current_user.spotify_token %>
+  <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read" %>
+<% else  %>
+  <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path %>
+<% end %>

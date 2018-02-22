@@ -1,11 +1,11 @@
-<h1> <%= current_user.username %>'s Stub Stash </h1>
+<h1> Behold! Your Stub Stash </h1>
 
 
 <% unless current_user.shows.count == 0 %>
   <p>Show Count: <%= current_user.shows.count %> </p>
 
-  <p>Bands you've seen: <% current_user.bands.each do |band| %>
-                            <%= band.name  %><br>
+  <p>Artists you've seen: <% current_user.artists.each do |artist| %>
+                            <%= artist.name  %><br>
                         <% end %> </p>
 
   <p>Venues you've been to: <% current_user.reload.venues.each do |venue| %>
@@ -20,7 +20,7 @@
     <% current_user.shows.each do |show| %>
       <div class="show">
         Date: <%= show.date.strftime("%m/%d/%Y") %><br>
-        Band: <%= show.band.name %><br>
+        Artist: <%= show.artist.name %><br>
         Venue: <%= show.venue.name %><br>
         <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
       </div>
@@ -30,6 +30,6 @@
 
 
 
-<%= link_to "Add A New Band", new_band_path %><br>
+<%= link_to "Add A New Artist", new_artist_path %><br>
 <%= link_to "Add A New Venue", new_venue_path %><br>
 <%= link_to "Add A New Show!", new_user_show_path %><br>

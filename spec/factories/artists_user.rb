@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :band_user do
+  factory :artist_user do
     association :user, factory: :user
-    association :band, factory: :band
+    association :artist, factory: :artist
   end
 end

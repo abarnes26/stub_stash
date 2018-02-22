@@ -29,3 +29,5 @@ module ShowTracker
     config.generators.system_tests = nil
   end
 end
+
+# RSpotify::authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
