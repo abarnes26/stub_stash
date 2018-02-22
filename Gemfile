@@ -17,17 +17,17 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'launchy'
+gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-spotify'
-gem 'figaro'
-
+gem 'oauth2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem "factory_bot_rails"
+  gem 'capybara', '~> 2.13'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'orderly'
 end

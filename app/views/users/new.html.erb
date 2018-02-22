@@ -2,8 +2,8 @@
   <%= form_for @user do |f| %>
     <h3>CREATE ACCOUNT</h3>
 
-    <div><%= f.label :username, class: "form-label" %></div>
-    <div><%= f.text_field :username %></div>
+    <div><%= f.label :email, class: "form-label" %></div>
+    <div><%= f.text_field :email %></div>
     <div><%= f.label :password, class: "form-label" %></div>
     <div><%= f.password_field :password %></div>
 
@@ -17,5 +17,5 @@
 
 <h3> -OR- </h3>
 
-<%= link_to "LOG IN WITH SPOTIFY", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=localhost%3A3000%2Fauth%2Fspotify%2Fcallback" %>
+<%= link_to "LOG IN WITH SPOTIFY", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read" %>
 <h4>(Strongly Recommended)</h4>
