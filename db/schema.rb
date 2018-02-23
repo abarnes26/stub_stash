@@ -45,9 +45,16 @@ ActiveRecord::Schema.define(version: 20180222213203) do
   end
 
   create_table "venues", force: :cascade do |t|
+    t.string "jambase_id"
     t.string "name"
+    t.string "address"
     t.string "city"
     t.string "state"
+    t.string "country"
+    t.string "zipcode"
+    t.string "url"
+    t.string "latitude"
+    t.string "longitude"
   end
 
   add_foreign_key "artist_users", "artists"
