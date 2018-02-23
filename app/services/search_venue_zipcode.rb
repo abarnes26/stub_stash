@@ -4,7 +4,7 @@ class SearchVenueZipcode
     @zipcode = zipcode
   end
 
-  def following_list
+  def venue_list
     JamBaseServices.new(zipcode).venue_lookup_zipcode
   end
 

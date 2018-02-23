@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/auth/spotify/callback", to: "spotify#update"
   get "/spotify-import", to: "spotify#import", as: :spotify_import
   get "/jambase/find-by-name", to: "jambase#find_venue_by_name"
-  get "/venue-lookup-zipcode", to: "jambase#find_venue_by_zipcode"
+  get "/jambase/find-by-zipcode", to: "jambase#find_venue_by_zipcode"
 
   resources "users", only: [:new, :create, :edit]
   resources "artists", only: [:index, :new, :create]

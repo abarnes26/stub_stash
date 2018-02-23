@@ -4,16 +4,21 @@ class JambaseController < ApplicationController
   end
 
   def find_venue_by_name
-    SearchVenueName.new(search_params).venue_list_name
+    @name = name_params
+    @venues = SearchVenueName.new(@name).venue_list[:Venues]
   end
 
   def find_venue_by_zipcode
-    SearchVenueZipcode.new(search_params).venue_list_name
+    @zipcode = zipcode_params
+    @venues = SearchVenueZipcode.new(@zipcode).venue_list[:Venues]
   end
 
   private
-    def search_params
-      params.require(:params).permit(:zipcode, :name)
+    def name_params
+      params.require(:name)[0]
     end
 
+    def zipcode_params
+      params.require(:zipcode)[0]
+    end
 end

@@ -1,0 +1,14 @@
+<h2>Lookup venues here: </h2>
+
+<h3>-Venues with the name: <%= @name %> -</h3><br>
+
+<div class="venue-listings">
+  <% @venues.each do |venue| %>
+    <div class="venue-container">
+      <h4>Name: <%= link_to venue[:Name], venues_path(venue), method: :create %></h4>
+      <p>Address: <%= venue[:Address] %></p>
+      <p>City: <%= venue[:City] %></p>
+      <p>State: <%= venue[:State] %></p><br>
+    </div>
+  <% end %>
+</div>
