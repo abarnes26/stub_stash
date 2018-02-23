@@ -29,6 +29,7 @@ class JambaseController < ApplicationController
     )
     if venue.save
       flash[:success] = "A new venue has been added to your stash!"
+      UserVenue.create(user: user, venue: venue)
       redirect_to venues_path
     else
       flash[:failure] = "Sorry, something went wrong when we were trying to add that venue, please try again."

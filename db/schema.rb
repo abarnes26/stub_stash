@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222213203) do
+ActiveRecord::Schema.define(version: 20180223065550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20180222213203) do
     t.index ["artist_id"], name: "index_shows_on_artist_id"
     t.index ["user_id"], name: "index_shows_on_user_id"
     t.index ["venue_id"], name: "index_shows_on_venue_id"
+  end
+
+  create_table "user_venues", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "venue_id"
+    t.index ["user_id"], name: "index_user_venues_on_user_id"
+    t.index ["venue_id"], name: "index_user_venues_on_venue_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +69,6 @@ ActiveRecord::Schema.define(version: 20180222213203) do
   add_foreign_key "shows", "artists"
   add_foreign_key "shows", "users"
   add_foreign_key "shows", "venues"
+  add_foreign_key "user_venues", "users"
+  add_foreign_key "user_venues", "venues"
 end
