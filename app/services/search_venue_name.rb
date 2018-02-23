@@ -9,7 +9,9 @@ class SearchVenueName
   end
 
   def clean_name
-    name.gsub(/ /, '+')
+    unless name.split.size == 1
+      name.gsub(/ /, '+')
+    end
   end
 
   private

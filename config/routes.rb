@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/spotify-import", to: "spotify#import", as: :spotify_import
   get "/jambase/find-by-name", to: "jambase#find_venue_by_name"
   get "/jambase/find-by-zipcode", to: "jambase#find_venue_by_zipcode"
+  post "/jambase/venue-create", to: "jambase#create_venue"
 
   resources "users", only: [:new, :create, :edit]
   resources "artists", only: [:index, :new, :create]

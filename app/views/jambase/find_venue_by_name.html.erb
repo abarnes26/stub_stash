@@ -5,7 +5,7 @@
 <div class="venue-listings">
   <% @venues.each do |venue| %>
     <div class="venue-container">
-      <h4>Name: <%= link_to venue[:Name], venues_path(venue), method: :create %></h4>
+      <h4>Name: <%= link_to venue[:Name], jambase_venue_create_path(venue: venue), method: :create %></h4>
       <p>Address: <%= venue[:Address] %></p>
       <p>City: <%= venue[:City] %></p>
       <p>State: <%= venue[:State] %></p><br>
