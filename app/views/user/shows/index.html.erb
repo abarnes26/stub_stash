@@ -21,15 +21,51 @@
       <div class="show">
         Date: <%= show.date.strftime("%m/%d/%Y") %><br>
         Artist: <%= show.artist.name %><br>
-        Venue: <%= show.venue.name %><br>
+        Venue: <%= show.venue.name %>
         <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
       </div>
     <% end %>
   <% end %>
 </div>
 
-
-
 <%= link_to "Add A New Artist", new_artist_path %><br>
 <%= link_to "Add A New Venue", new_venue_path %><br>
 <%= link_to "Add A New Show!", new_user_show_path %><br>
+
+<div id="map" style="width: 500px; height: 400px;"></div>
+
+<h3>Venues you've seen shows:</h3>
+<div id="map"></div>
+   <script>
+     function initMap() {
+       var uluru = {lat: -25.363, lng: 131.044};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 3.5,
+         center: {lat: 39.206444, lng: -98.296170}
+       });
+
+       var locations = <%= raw @venue_markers %>;
+
+       var infowindow = new google.maps.InfoWindow();
+
+       var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+     }
+   }
+   </script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=<%=ENV['GOOGLE_MAP_API_KEY']%>">
+</script>
