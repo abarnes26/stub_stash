@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222213203) do
+ActiveRecord::Schema.define(version: 20180223065550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20180222213203) do
     t.index ["venue_id"], name: "index_shows_on_venue_id"
   end
 
+  create_table "user_venues", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "venue_id"
+    t.index ["user_id"], name: "index_user_venues_on_user_id"
+    t.index ["venue_id"], name: "index_user_venues_on_venue_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -45,9 +52,16 @@ ActiveRecord::Schema.define(version: 20180222213203) do
   end
 
   create_table "venues", force: :cascade do |t|
+    t.string "jambase_id"
     t.string "name"
+    t.string "address"
     t.string "city"
     t.string "state"
+    t.string "country"
+    t.string "zipcode"
+    t.string "url"
+    t.string "latitude"
+    t.string "longitude"
   end
 
   add_foreign_key "artist_users", "artists"
@@ -55,4 +69,6 @@ ActiveRecord::Schema.define(version: 20180222213203) do
   add_foreign_key "shows", "artists"
   add_foreign_key "shows", "users"
   add_foreign_key "shows", "venues"
+  add_foreign_key "user_venues", "users"
+  add_foreign_key "user_venues", "venues"
 end

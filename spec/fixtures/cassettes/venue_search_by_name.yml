@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.jambase.com/venues?api_key=6zz2uzydt9e4qyy76cz4shut&name=Red%20Rocks&page=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 26 Feb 2018 19:57:30 GMT
+      Expires:
+      - "-1"
+      Pragma:
+      - no-cache
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Mashery-Responder:
+      - prod-j-worker-us-east-1d-122.mashery.com
+      X-Powered-By:
+      - ASP.NET
+      Content-Length:
+      - '847'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"Info":{"TotalResults":3,"PageNumber":0,"Message":"search venue by
+        name"},"Venues":[{"Id":177,"Name":"Red Rocks Amphitheatre","Address":"18300
+        W. Alameda Parkway","City":"Morrison","State":"Colorado","StateCode":"CO","Country":"US","CountryCode":"US","ZipCode":"80465","Url":"http://www.redrocksonline.com/","Latitude":39.663295,"Longitude":-105.205078},{"Id":9305,"Name":"Red
+        Rocks Cafe and Tequila Bar","Address":"13850 Braddock rd","City":"Centerville","State":"Virginia","StateCode":"VA","Country":"US","CountryCode":"US","ZipCode":"20121","Url":"","Latitude":38.836217,"Longitude":-77.42701},{"Id":125893,"Name":"Red
+        Rocks Nightclub (formerly The Haze)","Address":"12 Civic Center Plz # 1655","City":"Mankato","State":"Minnesota","StateCode":"MN","Country":"US","CountryCode":"US","ZipCode":"56001","Url":"","Latitude":0.0,"Longitude":0.0}]}'
+    http_version: 
+  recorded_at: Mon, 26 Feb 2018 19:26:52 GMT
+recorded_with: VCR 4.0.0
