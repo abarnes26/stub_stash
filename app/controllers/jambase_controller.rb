@@ -15,21 +15,21 @@ class JambaseController < ApplicationController
 
   def create_venue
     params = venue_params
-    venue = Venue.new(
-      jambase_id: params[:Id],
-      name: params[:Name],
-      address: params[:Address],
-      city: params[:City],
-      state: params[:State],
-      country: params[:Country],
-      zipcode: params[:ZipCode],
-      url: params[:Url],
-      latitude: params[:Latitude],
-      longitude: params[:Longitude]
-    )
+    venue = Venue.find_or_create_by(jambase_id: params[:Id]) do |venue|
+      venue.jambase_id = params[:Id],
+      venue.name = params[:Name],
+      venue.address = params[:Address],
+      venue.city = params[:City],
+      venue.state = params[:State],
+      venue.country = params[:Country],
+      venue.zipcode = params[:ZipCode],
+      venue.url = params[:Url],
+      venue.latitude = params[:Latitude],
+      venue.longitude = params[:Longitude]
+    end
     if venue.save
       flash[:success] = "A new venue has been added to your stash!"
-      UserVenue.create(user: user, venue: venue)
+      UserVenue.create(user: current_user, venue: venue)
       redirect_to venues_path
     else
       flash[:failure] = "Sorry, something went wrong when we were trying to add that venue, please try again."

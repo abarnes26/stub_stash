@@ -1,18 +1,22 @@
 <h3>Lookup venues here: </h3>
 
-By name:
-<%= form_tag( '/jambase/find-by-name', :method => 'get') do %>
-  <%= label_tag :name %>
-  <%= text_field :name, params[:name] %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="venue-search-name">
+  By name:
+  <%= form_tag( '/jambase/find-by-name', :method => 'get') do %>
+    <%= label_tag :name %>
+    <%= text_field :name, params[:name] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
-By zipcode:
-<%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %>
-  <%= label_tag :zipcode %>
-  <%= text_field :zipcode, params[:zipcode] %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="venue-search-zipcode">
+  By zipcode:
+  <%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %>
+    <%= label_tag :zipcode %>
+    <%= text_field :zipcode, params[:zipcode] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
 
 <h4>OR create your own:</h4>
