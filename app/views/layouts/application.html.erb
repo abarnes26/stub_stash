@@ -6,9 +6,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
+    <div class="nav-bar">
+      <div class="nav-bar-title">
+      <h3>Stub Stash</h3>
+      </div>
+      <div class="nav-bar-link-container">
+        <div class="nav-bar-link">
+          <%= link_to "Your Stash", user_shows_path %>
+        </div>
+        <div class="nav-bar-link">
+          <%= link_to "Your Artists", user_artists_path %>
+        </div>
+        <div class="nav-bar-link">
+          <%= link_to "Your Venues", venues_path %>
+        </div>
+        <div class="nav-bar-link">
+          <%= link_to "Logout",  %>
+
+        </div>
+
+      </div>
+
+    </div>
     <% flash.each do |type, message| %>
       <%= content_tag :div, message.html_safe, class: "flash_message" %>
     <% end %>
