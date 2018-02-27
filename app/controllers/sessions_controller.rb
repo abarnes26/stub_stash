@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    
+
   end
 
   def create
@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "Login Successful!"
-      verify_admin
+      # verify_admin
+      redirect_to user_shows_path
     else
       render :new
     end
