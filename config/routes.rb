@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  get "/login", to: "sessions#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
+  get "/sign-up", to: "user#new"
   get "/dashboard", to: "users#show"
   get "/auth/spotify/callback", to: "spotify#update"
   get "/spotify-import", to: "spotify#import", as: :spotify_import

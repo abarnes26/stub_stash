@@ -22,6 +22,7 @@ gem 'omniauth'
 gem 'omniauth-spotify'
 gem 'oauth2'
 gem 'faraday'
+gem 'bootstrap', '~> 4.0.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

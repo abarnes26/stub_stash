@@ -5,7 +5,6 @@ class User::ShowsController < ApplicationController
     current_user.venues.each do |venue|
       @venue_markers << [venue.name, venue.latitude, venue.longitude]
     end
-
   end
 
   def new

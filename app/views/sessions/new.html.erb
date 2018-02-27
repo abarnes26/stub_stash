@@ -1,0 +1,11 @@
+<div class=login-container>
+  <h3>LOG IN</h3>
+  <%= form_tag({}, {:id => "new-account-form"})  %>
+
+    <div><%= label_tag :email %></div>
+    <div><%= text_field_tag :email %></div>
+    <div><%= label_tag :password %></div>
+    <div><%= password_field_tag :password %></div>
+
+    <div><%= submit_tag "Sign In", class: "submit-button" %></div><br>
+</div>
