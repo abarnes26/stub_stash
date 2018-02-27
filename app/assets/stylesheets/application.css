@@ -84,3 +84,57 @@
     text-align: center;
     line-height: 70px;
   }
+
+  .stash-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .stash-buttons {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .show {
+    background-color: rgba(5, 26, 33, .9);
+    width: 500px;
+    margin: 3%;
+    padding: 4%;
+    border: 3px black solid;
+    color: white;
+
+  }
+
+  .stash-background {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+  }
+
+  .stash-title {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+  }
+
+  .fake-class{
+  }
+
+  .stash-add-button {
+    background-color: rgb(32, 175, 67);
+    border-radius: 20px;
+    padding: 10px 25px;
+  }
+
+  .stash-add-button a {
+    color: black;
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bolder;
+  }
+
+  body {
+    color: white;
+  }
