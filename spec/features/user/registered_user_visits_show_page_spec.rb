@@ -1,24 +1,6 @@
 require 'rails_helper'
 
 feature "A registered user visits the show page" do
-  it "can add a new artist from the show page" do
-    user = create(:user)
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-    visit user_shows_path
-    click_on "Add A New Artist"
-
-    expect(current_path).to eq(new_artist_path)
-
-    fill_in "artist[name]", with: "Artist 1"
-
-    click_on "Add Artist!"
-
-    expect(current_path).to eq(user_artists_path)
-
-    expect(page).to have_content("Artist 1")
-  end
-
   it "can add a new venue from the show page" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -44,8 +26,9 @@ feature "A registered user visits the show page" do
   it "can add a new show from the show page" do
     user = create(:user)
     artist = create(:artist)
-    ArtistUser.create(user: user, artist: artist)
     venue = create(:venue)
+    ArtistUser.create(user: user, artist: artist)
+    UserVenue.create(user: user, venue: venue)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit user_shows_path

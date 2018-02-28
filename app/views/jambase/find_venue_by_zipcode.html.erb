@@ -1,14 +1,16 @@
-<h2>Lookup venues here: </h2>
+<div class="venue-lookup-page">
+  <h2>Lookup venues here: </h2>
 
-<h3>-Venues located in: <%= @zipcode %> -</h3><br>
+  <h3>-Venues located in: <%= @zipcode %> -</h3><br>
 
-<div class="venue-listings">
-  <% @venues.each do |venue| %>
-    <div class="venue-container">
-      <h4>Name: <%= venue[:Name] %></h4>
-      <p>Address: <%= venue[:Address] %></p>
-      <p>City: <%= venue[:City] %></p>
-      <p>State: <%= venue[:State] %></p><br>
-    </div>
-  <% end %>
+  <div class="venue-listings">
+    <% @venues.each do |venue| %>
+      <div class="venue-container">
+        <h4>Name: <%= venue[:Name] %></h4>
+        <p>Address: <%= venue[:Address] %></p>
+        <p>City: <%= venue[:City] %></p>
+        <p>State: <%= venue[:State] %></p><br>
+      </div>
+    <% end %>
+  </div>
 </div>
