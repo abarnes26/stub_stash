@@ -5,7 +5,8 @@
 
   <div class="artist-list">
     <% current_user.reload.artists.each do |artist| %>
-      <div class="artist"><%= link_to artist.name, artist_path(artist) %><br>
+      <div class="artist">
+        <%= link_to artist.name, artist_path(artist) %><br>
         <%= link_to " Remove ", user_artist_path(artist), method: :delete, class: 'delete-show-button' %>
       </div>
     <% end %>

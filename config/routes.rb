@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources "users", only: [:new, :create, :edit]
   resources "artists", only: [:index, :show, :new, :create]
   resources "shows", only: [:index]
-  resources "venues", only: [:index, :show, :new, :create]
+  resources "venues", only: [:index, :show, :new, :create, :destroy]
 
   namespace :user do
     resources "shows", only: [:index, :new, :create, :edit, :destroy]
