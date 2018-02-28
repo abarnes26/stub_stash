@@ -297,7 +297,46 @@
   .new-show-page {
     background-image: url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-0.3.5&s=5305bbef8c3d160b06491d89478c16ca&auto=format&fit=crop&w=1350&q=80");
     background-size: cover;
+    background-position: calc(100% - 0px) calc(0% - 200px);
     height: 700px;
     width: auto;
-    background-position: calc(100% - 0px) calc(0% - 200px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-show-container {
+    position: relative;
+    top: 15%;
+    height: 35%;
+    width: 20%;
+    padding: 3%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+  }
+
+  .new-show-links {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .new-show-link {
+    background-color: rgb(122, 184, 191);
+    color: black;
+    padding: 7px;
+    border: solid white 1px;
+    font-family: Arial;
+  }
+
+  .new-show-link:hover {
+    background-color: rgb(146, 223, 232)
+  }
+
+  .new-show-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  select {
+    width: 120px;
   }
