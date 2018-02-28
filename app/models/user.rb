@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   enum role: ["user", "admin"]
 
+  def show_list(user, venue)
+    Show.where(user_id: user.id).where(venue: venue)
+  end
+
 end

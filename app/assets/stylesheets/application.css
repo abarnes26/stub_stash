@@ -150,6 +150,7 @@
   .stash {
     background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80");
     background-size: cover;
+    background-position: calc(100% - 0px) calc(0% - 250px);
   }
 
   .show-list {
@@ -165,12 +166,13 @@
 
   .artist-list {
     display: flex;
-
+    flex-flow: wrap;
+    justify-content: center;
   }
 
   .artist {
     background-color: rgba(5, 26, 33, .9);
-    width: 450px;
+    width: 200px;
     margin: 5% 0%;
     padding: 4%;
     border: 3px black solid;
@@ -182,4 +184,14 @@
   .venue-list-show {
     background-image: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=2550&q=80");
     background-size: cover;
+    height: 700px;
+    width: auto;
+  }
+
+  .venue-show-page {
+    background-image: url("https://images.unsplash.com/photo-1504680177321-2e6a879aac86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a8111c411923b7c9dbfc11d87f5d9c48&auto=format&fit=crop&w=2550&q=80");
+    background-size: cover;
+    height: 700px;
+    width: auto;
+
   }
