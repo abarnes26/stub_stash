@@ -8,6 +8,12 @@ class VenuesController < ApplicationController
     @venue = Venue.new
   end
 
+  def show
+    @venue = Venue.find(params[:id])
+    @show_list = Show.show_list_for_venue(current_user, @venue)
+    @most_seen_artist = Artist.most_seen_at_venue(current_user, @venue)
+  end
+
   def create
     @venue = Venue.new(venue_params)
     if @venue.save

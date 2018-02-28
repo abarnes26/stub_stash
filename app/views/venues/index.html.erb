@@ -1,5 +1,11 @@
-<h2>Here are the current venues</h2>
+<div class="venue-list-show">
+  <h2>Here are the current venues</h2>
 
-<% @venues.each do |venue| %>
-  <p><%= venue.name %> (<%= venue.city%>, <%= venue.state %>)
-<% end %>
+  <div class="venue-add-button-container">
+    <%= link_to "Add Venue", new_venue_path %>
+  </div>
+
+  <% @venues.each do |venue| %>
+    <p><%= link_to venue.name, venue_path(venue)%> (<%= venue.city%>, <%= venue.state %>)
+  <% end %>
+</div>

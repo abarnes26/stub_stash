@@ -16,7 +16,7 @@ class JambaseController < ApplicationController
   def create_venue
     params = venue_params
     venue = Venue.find_or_create_by(jambase_id: params[:Id]) do |venue|
-      venue.jambase_id = params[:Id],
+      venue.jambase_id = params[:Id][0],
       venue.name = params[:Name],
       venue.address = params[:Address],
       venue.city = params[:City],
