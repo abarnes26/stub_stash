@@ -229,7 +229,7 @@
   .venue-lookup-page {
     background-image: url("https://images.unsplash.com/photo-1470345961863-06d4b12d93b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b346a2851e2336eaae0b4877b36a7357&auto=format&fit=crop&w=1489&q=80");
     background-size: cover;
-    height: 700px;
+    height: 900px;
     width: auto;
     display: flex;
     justify-content: center;
@@ -249,6 +249,32 @@
 
   .venue-search-name, .venue-search-zipcode {
     padding: 20px;
+  }
+
+  .venue-container {
+    background-color: rgba(195, 214, 244, .7);
+    position: relative;
+    top: 5%;
+    height: 90%;
+    width: 700px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+  }
+
+  .venue-listing {
+    background-color: rgba(5, 26, 33, .9);
+    width: 500px;
+    margin: 5% 0%;
+    padding: 2%;
+    border: 3px black solid;
+    color: white;
+  }
+
+  .venue-criteria {
+    color: black
   }
 
   .session-new-page {
