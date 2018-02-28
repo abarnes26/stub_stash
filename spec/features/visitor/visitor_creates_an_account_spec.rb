@@ -13,7 +13,7 @@ feature "Visitor creates a new account" do
     click_on "Create Account"
 
     expect(page).to have_content("Congratulations! Your account has been created!")
-    expect(current_path).to eq(dashboard_path)
+    expect(current_path).to eq(user_shows_path)
     expect(page).to have_no_content("Login")
   end
 end

@@ -1,13 +1,14 @@
+
 <div>
   <%= form_for @user do |f| %>
     <h3>CREATE AN ACCOUNT</h3>
 
-    <div><%= f.label :email, class: "form-label" %></div>
-    <div><%= f.text_field :email %></div>
-    <div><%= f.label :password, class: "form-label" %></div>
-    <div><%= f.password_field :password %></div>
+    <div class="login-field"><%= f.label :email, class: "form-label" %></div>
+    <div class="login-field"><%= f.text_field :email %></div>
+    <div class="login-field"><%= f.label :password, class: "form-label" %></div>
+    <div class="login-field"><%= f.password_field :password %></div>
 
-    <div><%= f.submit "Create Account", class: "submit-button" %></div>
+    <div class="login-field"><%= f.submit "Create Account", class: "submit-button" %></div>
   <% end %>
 
   <div>

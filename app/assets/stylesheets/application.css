@@ -54,15 +54,18 @@
   }
 
   .welcome-container {
-    align-content: center;
+    background-image: url("https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3acdc9ebaa62c41d40a8f1484b9a7943&auto=format&fit=crop&w=2550&q=80");
+    background-size: cover;
+    height: 1000px;
+    width: auto;
+    display: block;
   }
 
   .welcome-text-container {
-    z-index: 1;
-    position:absolute;
-    bottom: 45%;
-    left: 17%;
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    position:relative;
+    top: 15%;
   }
 
   .welcome-text {
@@ -94,6 +97,8 @@
   .stash-buttons {
     display: flex;
     flex-flow: row;
+    position: relative;
+    top: 5%;
     justify-content: center;
   }
 
@@ -115,14 +120,19 @@
     display: flex;
     justify-content: space-around;
     color: white;
+    position: relative;
+    top: 5%;
   }
 
   .fake-class{
   }
 
   .flash-message {
-    position: relative;
-    left: 37%;
+    display: block;
+    position: absolute;
+    left: 2%;
+    top: 12%;
+    text-align: center;
     justify-content: center;
     font-family: Arial;
     font-weight: bold;
@@ -133,6 +143,12 @@
     background-color: rgb(32, 175, 67);
     border-radius: 20px;
     padding: 10px 25px;
+    position: relative;
+    border: 2px solid black;
+  }
+
+  .stash-add-button:hover {
+    background-color: rgb(55, 211, 88);
   }
 
   .stash-add-button a {
@@ -140,6 +156,7 @@
     text-decoration: none;
     font-family: Arial;
     font-weight: bolder;
+    padding: inherit;
   }
 
   body {
@@ -150,6 +167,8 @@
   .stash {
     background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80");
     background-size: cover;
+    height: 1000px;
+    width: auto;
     background-position: calc(100% - 0px) calc(0% - 250px);
   }
 
@@ -162,6 +181,8 @@
   .artist-list-show {
     background-image: url("https://images.unsplash.com/photo-1453090927415-5f45085b65c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a281f105ebc13c0450a98c2e9b681fcc&auto=format&fit=crop&w=1462&q=80");
     background-size: cover;
+    height: 1000px;
+    width: auto;
   }
 
   .artist-list {
@@ -186,6 +207,7 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    background-position: calc(100% - 0px) calc(0% - 400px);
   }
 
   .venue-show-page {
@@ -210,6 +232,59 @@
     width: auto;
   }
 
+  .session-new-page {
+    background-image: url("https://images.unsplash.com/photo-1448485780098-7e0b78781fc1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46c162403dfca4c452292ad0509a2a40&auto=format&fit=crop&w=1489&q=80");
+    background-size: cover;
+    height: 400px;
+    width: auto;
+    background-position: calc(100% - 0px) calc(0% - 500px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-container {
+    display: flex;
+    width: 50%;
+    height: 20%;
+    justify-content: space-around;
+    position: relative;
+    top: 20%;
+    background-color: rgba(5, 26, 33, .9);
+    border: white 2px solid;
+  }
+
+  .login-form {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .login-title {
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .login-field {
+    padding: 4%;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
+  }
+
+  .sign-in-button {
+    background-color: rgb(122, 184, 191);
+    font-family: Arial Black;
+    font-size: 16px;
+    border: 2px lightgrey solid;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
+  }
+
   a {
     text-decoration: none;
     color: white;
@@ -217,4 +292,12 @@
 
   #map {
     background-color: rgb(229, 227, 223);
+  }
+
+  .new-show-page {
+    background-image: url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-0.3.5&s=5305bbef8c3d160b06491d89478c16ca&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    height: 700px;
+    width: auto;
+    background-position: calc(100% - 0px) calc(0% - 200px);
   }
