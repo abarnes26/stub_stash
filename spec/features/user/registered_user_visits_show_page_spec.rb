@@ -1,28 +1,6 @@
 require 'rails_helper'
 
 feature "A registered user visits the show page" do
-  it "can add a new venue from the show page" do
-    user = create(:user)
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-    visit user_shows_path
-    click_on "Add A New Venue"
-
-    expect(current_path).to eq(new_venue_path)
-
-    fill_in "venue[name]", with: "Test Venue"
-    fill_in "venue[city]", with: "Test City"
-    select "Colorado", from: "venue[state]"
-
-    click_on "Add Venue!"
-
-    expect(current_path).to eq(user_shows_path)
-
-    visit venues_path
-
-    expect(page).to have_content("Test Venue")
-  end
-
   it "can add a new show from the show page" do
     user = create(:user)
     artist = create(:artist)
@@ -47,8 +25,12 @@ feature "A registered user visits the show page" do
 
     expect(page).to have_content("Show Count: 1")
     expect(page).to have_content("A New show has been added to your stub stash!")
-    expect(page).to have_content("Artists you've seen: #{artist.name}")
-    expect(page).to have_content("Venues you've been to: #{venue.name}")
+    within(".show") do
+      expect(page).to have_content("Date: 01/20/2017")
+      expect(page).to have_content("Artist: #{artist.name}")
+      expect(page).to have_content("Venue: #{venue.name}")
+    end
+
   end
 
   it "can delete a show from the show index" do
