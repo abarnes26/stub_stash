@@ -6,6 +6,7 @@
 
     <div class="venue-add-button-container">
       <%= link_to "Add Venue", new_venue_path, class: "new-show-link" %>
+      <%= link_to " Remove ", venue_path(venue), method: :delete, class: 'delete-show-button' %>
     </div>
 
     <div class="venue-listing-show">

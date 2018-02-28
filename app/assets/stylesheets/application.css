@@ -234,7 +234,26 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .venue-list {
+    overflow: scroll;
+  }
+
+  .delete-show-button {
+    padding: 5px;
+    background-color: rgba(196, 1, 44, .4);
+    width: 100px;
+    height: 8px;
+    border-radius: 8px;
+    font-size: 11px;
+  }
+
+  .delete-show-button:hover {
+    background-color: rgb(198, 1, 45);
   }
 
   .artist-show-page {

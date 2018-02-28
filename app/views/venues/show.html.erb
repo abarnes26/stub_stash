@@ -1,6 +1,9 @@
 <div class="venue-show-page">
+  <div class="venue-show-container">
+
   <div class="venue-title">
     <h1> <%=@venue.name%> </h1>
+    <h4> <%=@venue.city%>, <%=@venue.state %> </h4>
   </div>
 
   <div class="venue-stats-count">
@@ -22,13 +25,12 @@
   <div class="show-list">
     <% @show_list.each do |show| %>
       <div class="show">
-        Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-        Artist: <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
-        <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
+        Date:  <%= show.date.strftime("%m/%d/%Y") %><br><br>
+        Artist:  <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
+        <%= link_to " Remove ", user_show_path(show), method: :delete, class: 'delete-show-button' %>
       </div>
     <% end %>
   </div>
 
-
-
+</div>
 </div>

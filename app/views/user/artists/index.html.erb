@@ -1,11 +1,13 @@
 <div class="artist-list-show">
   <div class="stash-title">
-    <h2>Here are the artists you've added</h2>
+    <h2>Here are the artists you've added:</h2>
   </div>
 
   <div class="artist-list">
     <% current_user.reload.artists.each do |artist| %>
-      <div class="artist"><%= artist.name %><br></div>
+      <div class="artist"><%= link_to artist.name, artist_path(artist) %><br>
+        <%= link_to " Remove ", user_artist_path(artist), method: :delete, class: 'delete-show-button' %>
+      </div>
     <% end %>
   </div><br>
 
