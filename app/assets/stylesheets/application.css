@@ -231,6 +231,24 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .venue-lookup-container {
+    position: relative;
+    top: 20%;
+    height: 35%;
+    width: 25%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venue-search-name, .venue-search-zipcode {
+    padding: 20px;
   }
 
   .session-new-page {
