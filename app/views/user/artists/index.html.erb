@@ -10,7 +10,7 @@
   </div><br>
 
     <% unless current_user.spotify_token %>
-      <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read", class: "stash-add-button" %>
+      <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=#{ENV['SPOTIFY_REDIRECT_URL']}&scope=user-follow-read", class: "stash-add-button" %>
     <% else  %>
       <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path, class: "stash-add-button"  %>
     <% end %>
