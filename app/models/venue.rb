@@ -3,4 +3,8 @@ class Venue < ApplicationRecord
   has_many :shows
   has_many :users, through: :shows
 
+  def self.most_visited_venue_by_artist(user, artist)
+    joins(shows: [:artist]).where(shows: {user: user}).where(shows: {artist: artist}).group(:id).first
+  end
+
 end

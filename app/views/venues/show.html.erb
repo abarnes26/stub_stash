@@ -9,7 +9,7 @@
     <% elsif @show_list.count == 1 %>
       <h2>You've seen 1 show here!</h2>
     <% else %>
-      <h2>You've see <%=@show_list.count%> shows here! </h2>
+      <h2>You've seen <%=@show_list.count%> shows here! </h2>
     <% end %>
   </div>
 
@@ -23,8 +23,7 @@
     <% @show_list.each do |show| %>
       <div class="show">
         Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-        Artist: <%= show.artist.name %><br><br>
-        Venue: <%= show.venue.name %>
+        Artist: <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
         <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
       </div>
     <% end %>

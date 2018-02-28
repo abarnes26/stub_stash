@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "/jambase/venue-create", to: "jambase#create_venue"
 
   resources "users", only: [:new, :create, :edit]
-  resources "artists", only: [:index, :new, :create]
+  resources "artists", only: [:index, :show, :new, :create]
   resources "shows", only: [:index]
   resources "venues", only: [:index, :show, :new, :create]
 

@@ -154,7 +154,7 @@
   }
 
   .show-list {
-    height: 90%;
+    height: 600px;
     width: auto;
     overflow: auto;
   }
@@ -194,4 +194,20 @@
     height: 700px;
     width: auto;
 
+  }
+
+  .artist-show-page {
+    background-image: url("https://images.unsplash.com/photo-1495805206262-861053687d6b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ad84af2ba2830951b6de40bd548b335f&auto=format&fit=crop&w=1650&q=80");
+    background-size: cover;
+    height: 700px;
+    width: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  #map {
+    background-color: rgb(229, 227, 223);
   }
