@@ -1,12 +1,17 @@
+<div class="artist-list-show">
+  <div class="stash-title">
+    <h2>Here are the artists you've added</h2>
+  </div>
 
-<h2>Here are the artists you've added</h2>
+  <div class="artist-list">
+    <% current_user.reload.artists.each do |artist| %>
+      <div class="artist"><%= artist.name %><br></div>
+    <% end %>
+  </div><br>
 
-<% current_user.reload.artists.each do |artist| %>
-  <%= artist.name %><br>
-<% end %>
-
-<% unless current_user.spotify_token %>
-  <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read" %>
-<% else  %>
-  <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path %>
-<% end %>
+    <% unless current_user.spotify_token %>
+      <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=http://localhost:3000/auth/spotify/callback&scope=user-follow-read", class: "stash-add-button" %>
+    <% else  %>
+      <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path, class: "stash-add-button"  %>
+    <% end %>
+</div>

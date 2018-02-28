@@ -99,18 +99,16 @@
 
   .show {
     background-color: rgba(5, 26, 33, .9);
-    width: 500px;
-    margin: 3%;
+    width: 450px;
+    margin: 5% 0%;
     padding: 4%;
     border: 3px black solid;
     color: white;
-
   }
 
   .stash-background {
     z-index: -1;
     width: 100%;
-    position: absolute;
   }
 
   .stash-title {
@@ -120,6 +118,15 @@
   }
 
   .fake-class{
+  }
+
+  .flash-message {
+    position: relative;
+    left: 37%;
+    justify-content: center;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 24px;
   }
 
   .stash-add-button {
@@ -137,4 +144,42 @@
 
   body {
     color: white;
+    z-index: 0;
+  }
+
+  .stash {
+    background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80");
+    background-size: cover;
+  }
+
+  .show-list {
+    height: 90%;
+    width: auto;
+    overflow: auto;
+  }
+
+  .artist-list-show {
+    background-image: url("https://images.unsplash.com/photo-1453090927415-5f45085b65c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a281f105ebc13c0450a98c2e9b681fcc&auto=format&fit=crop&w=1462&q=80");
+    background-size: cover;
+  }
+
+  .artist-list {
+    display: flex;
+
+  }
+
+  .artist {
+    background-color: rgba(5, 26, 33, .9);
+    width: 450px;
+    margin: 5% 0%;
+    padding: 4%;
+    border: 3px black solid;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .venue-list-show {
+    background-image: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=2550&q=80");
+    background-size: cover;
   }

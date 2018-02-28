@@ -1,71 +1,72 @@
-<img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80" class="stash-background">
+<div class="stash">
 
-<div class="stash-title">
-  <div><h1> Behold! Your Stub Stash </h1></div>
-</div>
-
-
-<% if current_user.shows.count == 0 %>
-  <h2>You don't have any stubs in your stash yet!</h2>
-  <div class="stash-buttons">
-    <%= link_to "Add A New Show!", new_user_show_path, class: "stash-add-button" %>
+  <div class="stash-title">
+    <div><h1>Your Stub Stash </h1></div>
   </div>
-<% else %>
-<div class="stash-row">
-  <div class="col-4">
-    <div class="show-list">
-      <div class="stash-buttons">
-        <div class="stash-add-button"><%= link_to "Add A New Show!", new_user_show_path %></div>
+
+
+  <% if current_user.shows.count == 0 %>
+    <h2>You don't have any stubs in your stash yet!</h2>
+
+  <% else %>
+  <div class="stash-row">
+      <div class="show-stash">
+        <div class="stash-buttons">
+          <div class="stash-add-button"><%= link_to "Add A New Show!", new_user_show_path %></div>
+        </div><br>
+        <div class="show-list">
+          <% current_user.shows.each do |show| %>
+            <div class="show">
+              Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
+              Artist: <%= show.artist.name %><br><br>
+              Venue: <%= show.venue.name %>
+              <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
+            </div>
+          <% end %>
+        </div>
       </div>
-        <% current_user.shows.each do |show| %>
-          <div class="show">
-            Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-            Artist: <%= show.artist.name %><br><br>
-            Venue: <%= show.venue.name %>
-            <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
-          </div>
-        <% end %>
+
+    <div class="col-8">
+
+      <h3>Where you've been:</h3>
+      <div id="map" style="width: 600px; height: 500px;"></div><br><br>
+
+      <div id="map"></div>
+         <script>
+           function initMap() {
+             var map = new google.maps.Map(document.getElementById('map'), {
+               zoom: 3.5,
+               center: {lat: 39.206444, lng: -98.296170}
+             });
+
+             var locations = <%= raw @venue_markers %>;
+
+             var infowindow = new google.maps.InfoWindow();
+
+             var marker, i;
+
+              for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+                });
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, i));
+           }
+         }
+         </script>
+
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=<%=ENV['GOOGLE_MAP_API_KEY']%>">
+      </script>
     </div>
   </div>
+
   <% end %>
 
-  <div class="col-8">
-
-    <h3>Where you've been:</h3>
-    <div id="map" style="width: 600px; height: 500px;"></div><br><br>
-
-    <div id="map"></div>
-       <script>
-         function initMap() {
-           var map = new google.maps.Map(document.getElementById('map'), {
-             zoom: 3.5,
-             center: {lat: 39.206444, lng: -98.296170}
-           });
-
-           var locations = <%= raw @venue_markers %>;
-
-           var infowindow = new google.maps.InfoWindow();
-
-           var marker, i;
-
-            for (i = 0; i < locations.length; i++) {
-              marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
-              });
-
-          google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-              infowindow.setContent(locations[i][0]);
-              infowindow.open(map, marker);
-            }
-          })(marker, i));
-         }
-       }
-       </script>
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=<%=ENV['GOOGLE_MAP_API_KEY']%>">
-    </script>
-  </div>
 </div>

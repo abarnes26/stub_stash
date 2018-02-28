@@ -1,5 +1,7 @@
-<h2>Here are the current venues</h2>
+<div class="venue-list-show">
+  <h2>Here are the current venues</h2>
 
-<% @venues.each do |venue| %>
-  <p><%= venue.name %> (<%= venue.city%>, <%= venue.state %>)
-<% end %>
+  <% @venues.each do |venue| %>
+    <p><%= venue.name %> (<%= venue.city%>, <%= venue.state %>)
+  <% end %>
+</div>
