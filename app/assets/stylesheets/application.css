@@ -145,6 +145,7 @@
     padding: 10px 25px;
     position: relative;
     border: 2px solid black;
+    color: black;
   }
 
   .stash-add-button:hover {
@@ -339,4 +340,32 @@
 
   select {
     width: 120px;
+  }
+
+  .new-artist-page {
+    background-image: url("https://images.unsplash.com/photo-1501962679900-bea61483313b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f168084999e671042574321f35b572aa&auto=format&fit=crop&w=1349&q=80");
+    background-size: cover;
+    background-position: calc(100% - 0px) calc(0% - 200px);
+    height: 700px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-artist-container {
+    position: relative;
+    top: 20%;
+    height: 35%;
+    width: 25%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-artist-form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
   }
