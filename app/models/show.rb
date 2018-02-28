@@ -8,4 +8,8 @@ class Show < ApplicationRecord
     where(user: user.id).where(venue: venue)
   end
 
+  def self.show_list_for_artist(user, artist)
+    where(user: user.id).where(artist: artist)
+  end
+
 end

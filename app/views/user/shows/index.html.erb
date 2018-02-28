@@ -22,7 +22,7 @@
           <% current_user.shows.each do |show| %>
             <div class="show">
               Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-              Artist: <%= show.artist.name %><br><br>
+              Artist: <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
               Venue: <%= link_to show.venue.name, venue_path(show.venue), class: "venue-link"%>
               <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
             </div>
@@ -32,7 +32,7 @@
 
     <div class="col-8">
 
-      <h3>Where you've been:</h3>
+      <h2>Show Count: <%= current_user.shows.count %> </h2>
       <div id="map" style="width: 600px; height: 500px;"></div><br><br>
 
       <div id="map"></div>
