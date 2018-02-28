@@ -9,9 +9,19 @@
     <% end %>
   </div><br>
 
-    <% unless current_user.spotify_token %>
-      <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=#{ENV['SPOTIFY_REDIRECT_URL']}&scope=user-follow-read", class: "stash-add-button" %>
-    <% else  %>
-      <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path, class: "stash-add-button"  %>
-    <% end %>
+  <div class="add-artist-container">
+    <div class="add-raw-artist">
+      <%= link_to "Add an Artist", new_artist_path, class: "add-artist-button" %>
+    </div>
+
+    <h3>-OR-</h3>
+
+    <div class="import-artist-button">
+      <% unless current_user.spotify_token %>
+        <%= link_to "LINK YOUR SPOTIFY TO LOAD ARTISTS", "https://accounts.spotify.com/authorize?client_id=b80edfd3cc114164bf1b0cbbbaf4d2b3&response_type=code&redirect_uri=#{ENV['SPOTIFY_REDIRECT_URL']}&scope=user-follow-read", class: "stash-add-button" %>
+      <% else  %>
+        <%= link_to "IMPORT YOUR ARTISTS FROM SPOTIFY", spotify_import_path, class: "stash-add-button"  %>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -5,7 +5,7 @@
   </div>
 
 
-  <% if current_user.shows.count == 0 %>
+  <% if current_user.reload.shows.count == 0 %>
     <div class="stash-title">
       <h2>You don't have any stubs in your stash yet!</h2>
     </div>
@@ -19,7 +19,7 @@
           <div class="stash-add-button"><%= link_to "Add A New Show!", new_user_show_path %></div>
         </div><br>
         <div class="show-list">
-          <% current_user.shows.each do |show| %>
+          <% current_user.reload.shows.each do |show| %>
             <div class="show">
               Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
               Artist: <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
@@ -32,7 +32,7 @@
 
     <div class="col-8">
 
-      <h2>Show Count: <%= current_user.shows.count %> </h2>
+      <h2>Show Count: <%= current_user.reload.shows.count %> </h2>
       <div id="map" style="width: 600px; height: 500px;"></div><br><br>
 
       <div id="map"></div>

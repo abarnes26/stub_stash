@@ -14,7 +14,7 @@ feature "A registered user with several shows visits their dashboard" do
   xit "user sees show analytics" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit dashboard_path
-    expect(page).to have_content("Total Shows: 3")
+    expect(page).to have_content("Show Count: 3")
     expect(page).to have_content("")
   end
 end

@@ -5,7 +5,7 @@ feature "Visitor creates a new account" do
 
     visit root_path
 
-    click_on "Create New Account"
+    click_on "Sign Up"
 
     expect(current_path).to eq(new_user_path)
     fill_in "user[email]", with: "Jonesin81@youdothedew.com"

@@ -5,7 +5,6 @@ class SearchVenueName
   end
 
   def venue_list
-    binding.pry
     JamBaseServices.new(clean_name).venue_lookup_name
   end
 
