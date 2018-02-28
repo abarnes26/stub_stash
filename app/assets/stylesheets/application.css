@@ -121,7 +121,9 @@
     justify-content: space-around;
     color: white;
     position: relative;
-    top: 5%;
+    top: 4%;
+    margin-bottom: 50px;
+    font-size: 20px;
   }
 
   .fake-class{
@@ -206,9 +208,25 @@
   .venue-list-show {
     background-image: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=2550&q=80");
     background-size: cover;
-    height: 700px;
+    height: 900px;
     width: auto;
     background-position: calc(100% - 0px) calc(0% - 400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venue-list-container {
+    background-color: rgba(24, 62, 122, .7);
+    position: relative;
+    top: 5%;
+    height: 90%;
+    width: 700px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
   }
 
   .venue-show-page {
@@ -252,7 +270,7 @@
   }
 
   .venue-container {
-    background-color: rgba(195, 214, 244, .7);
+    background-color: rgba(195, 214, 244, .3);
     position: relative;
     top: 5%;
     height: 90%;
@@ -262,6 +280,16 @@
     flex-direction: column;
     align-items: center;
     overflow: scroll;
+  }
+
+  .venue-listing-show {
+    background-color: rgba(5, 26, 33, .9);
+    width: 400px;
+    margin: 5% 0%;
+    padding: 2%;
+    border: 3px black solid;
+    color: white;
+    text-align: center;
   }
 
   .venue-listing {
@@ -333,10 +361,6 @@
   a {
     text-decoration: none;
     color: white;
-  }
-
-  #map {
-    background-color: rgb(229, 227, 223);
   }
 
   .new-show-page {
