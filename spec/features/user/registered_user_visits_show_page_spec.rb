@@ -46,7 +46,7 @@ feature "A registered user visits the show page" do
     expect(page).to have_content("Show Count: 1")
 
     within ".show" do
-      click_link "-"
+      click_link "Remove"
     end
 
     # expect(flash[:alert]).to be_present
