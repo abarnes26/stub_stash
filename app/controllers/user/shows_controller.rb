@@ -2,9 +2,10 @@ class User::ShowsController < ApplicationController
 
   def index
     @venue_markers = Array.new
-    current_user.venues.each do |venue|
-      @venue_markers << [venue.name, venue.latitude, venue.longitude]
-    end
+    @venue_markers = current_user.visited_venues(current_user)
+    # current_user.venues.each do |venue|
+    #   @venue_markers << [venue.name, venue.latitude, venue.longitude]
+    # end
   end
 
   def new

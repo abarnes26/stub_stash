@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   has_many :artist_users, dependent: :destroy
   has_many :shows
-  has_many :venues, through: :shows
+  has_many :venues, through: :user_venues
   has_many :artists, through: :artist_users
   has_many :user_venues
   validates :password, presence: true, length: {minimum: 5, maximum: 120}, on: :create
@@ -13,6 +13,14 @@ class User < ApplicationRecord
 
   def show_list(user, venue)
     Show.where(user_id: user.id).where(venue: venue)
+  end
+
+  def visited_venues(user)
+    venue_list(user).map { |venue| [venue.name, venue.latitude, venue.longitude] }
+  end
+
+  def venue_list(user)
+    user.shows.map { |show| show.venue }
   end
 
 end
