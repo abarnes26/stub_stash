@@ -261,6 +261,9 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .venue-lookup-page {
