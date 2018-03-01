@@ -133,7 +133,7 @@
     display: block;
     position: absolute;
     left: 2%;
-    top: 12%;
+    top: 14%;
     text-align: center;
     justify-content: center;
     font-family: Arial;
@@ -337,15 +337,52 @@
     justify-content: center;
   }
 
+  .user-new-page {
+    background-image: url("https://images.unsplash.com/photo-1448485780098-7e0b78781fc1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46c162403dfca4c452292ad0509a2a40&auto=format&fit=crop&w=1489&q=80");
+    background-size: cover;
+    height: 700px;
+    width: auto;
+    background-position: calc(100% - 0px) calc(0% - 300px);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
   .login-container {
     display: flex;
+    flex-direction: column;
     width: 50%;
-    height: 20%;
+    height: 45%;
     justify-content: space-around;
     position: relative;
-    top: 20%;
+    top: 10%;
     background-color: rgba(5, 26, 33, .9);
     border: white 2px solid;
+  }
+
+  .link-to-login {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user-new-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+    height: 400px;
+    width: 40%;
+    background-color: rgba(5, 26, 33, .9);
+    border: white 2px solid;
+  }
+
+  .user-new-field {
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
+    padding: 10px;
   }
 
   .login-form {

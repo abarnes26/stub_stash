@@ -1,17 +1,19 @@
+<div class="user-new-page">
+  <div class="user-new-container">
+    <h3 class="login-title">CREATE AN ACCOUNT</h3>
 
-<div>
-  <%= form_for @user do |f| %>
-    <h3>CREATE AN ACCOUNT</h3>
+    <%= form_for @user do |f| %>
 
-    <div class="login-field"><%= f.label :email, class: "form-label" %></div>
-    <div class="login-field"><%= f.text_field :email %></div>
-    <div class="login-field"><%= f.label :password, class: "form-label" %></div>
-    <div class="login-field"><%= f.password_field :password %></div>
+      <div class="user-new-field"><%= f.label :email, class: "form-label" %></div>
+      <div class="user-new-field"><%= f.text_field :email %></div>
+      <div class="user-new-field"><%= f.label :password, class: "form-label" %></div>
+      <div class="user-new-field"><%= f.password_field :password %></div>
 
-    <div class="login-field"><%= f.submit "Create Account", class: "submit-button" %></div>
-  <% end %>
+      <div class="user-new-field"><%= f.submit "Create Account", class: "submit-button" %></div>
+    <% end %>
 
-  <div>
-    <h3> <%= link_to "ALREADY HAVE AN ACCOUNT?", login_path %></h3>
+    <div class="link-to-login">
+      <h3> <%= link_to "ALREADY HAVE AN ACCOUNT?", login_path %></h3>
+    </div>
   </div>
 </div>
