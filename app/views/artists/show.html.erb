@@ -28,8 +28,8 @@
       <% @show_list.each do |show| %>
         <div class="show">
           Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-          Venue: <%= show.venue.name %>
-          <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
+          Venue: <%= show.venue.name %><br><br>
+          <%= link_to "Remove", user_show_path(show), method: :delete, class: 'delete-show-button' %>
         </div>
       <% end %>
     </div>

@@ -23,8 +23,8 @@
             <div class="show">
               Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
               Artist: <%= link_to show.artist.name, artist_path(show.artist) %><br><br>
-              Venue: <%= link_to show.venue.name, venue_path(show.venue), class: "venue-link"%>
-              <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
+              Venue: <%= link_to show.venue.name, venue_path(show.venue), class: "venue-link"%><br><br>
+              <%= link_to "Remove", user_show_path(show), method: :delete, class: 'delete-show-button' %>
             </div>
           <% end %>
         </div>
@@ -33,7 +33,7 @@
     <div class="col-8">
 
       <h2>Show Count: <%= current_user.reload.shows.count %> </h2>
-      <div id="map" style="width: 600px; height: 500px; border: 1px white solid; "></div><br><br>
+      <div id="map" style="width: 600px; height: 500px; border: 1px white solid; color: black; "></div><br><br>
 
       <div id="map"></div>
          <script>

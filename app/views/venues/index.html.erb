@@ -9,12 +9,12 @@
       <%= link_to "Add Venue", new_venue_path, class: "new-show-link" %>
     </div>
 
-    <div class="venue-listing-show">
       <% @venues.each do |venue| %>
-        <p><%= link_to "#{venue.name} - #{venue.city}, #{venue.state}", venue_path(venue)%></p>
-        <%= link_to " Remove ", venue_path(venue), method: :delete, class: 'delete-show-button' %>
+      <div class="venue-listing-show">
+          <p><%= link_to "#{venue.name} - #{venue.city}, #{venue.state}", venue_path(venue)%></p>
+          <%= link_to " Remove ", venue_path(venue), method: :delete, class: 'delete-show-button' %>
+        </div>
       <% end %>
-    </div>
   </div>
   <% else %>
     <div class="venue-list-container">
