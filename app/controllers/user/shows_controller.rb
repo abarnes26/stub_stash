@@ -1,7 +1,7 @@
 class User::ShowsController < ApplicationController
 
   def index
-    @venue_markers = current_user.visited_venues(current_user)
+    @venue_markers = current_user.reload.visited_venues(current_user)
   end
 
   def new

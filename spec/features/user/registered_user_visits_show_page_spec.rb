@@ -19,6 +19,7 @@ feature "A registered user visits the show page" do
     select "#{venue.name}", from: "show[venue]"
     fill_in "show[date]", with: "20/1/2017"
 
+
     click_on "Add Show!"
 
     expect(current_path).to eq(user_shows_path)

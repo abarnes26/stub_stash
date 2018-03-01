@@ -10,9 +10,9 @@ class SearchVenueName
 
   def clean_name
     unless name.split.size == 1
-      name.gsub(/ /, '+')
+      @name = @name.gsub(/ /, '+')
     end
-    name
+    @name
   end
 
   private
