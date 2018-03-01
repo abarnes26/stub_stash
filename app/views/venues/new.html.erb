@@ -1,43 +1,27 @@
 <div class="venue-lookup-page">
+  <div class="venue-lookup-container">
 
   <h3>Lookup venues here: </h3>
 
-  <div class="venue-search-name">
-    By name:
-    <%= form_tag( '/jambase/find-by-name', :method => 'get') do %>
-      <%= label_tag :name %>
-      <%= text_field :name, params[:name] %>
-      <%= submit_tag "Search" %>
-    <% end %>
-  </div>
+    <div class="venue-search-name">
+      By name:
+      <%= form_tag( '/jambase/find-by-name', :method => 'get') do %>
+        <%= label_tag :name %>
+        <%= text_field :name, params[:name] %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
 
-  <div class="venue-search-zipcode">
-    By zipcode:
-    <%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %>
-      <%= label_tag :zipcode %>
-      <%= text_field :zipcode, params[:zipcode] %>
-      <%= submit_tag "Search" %>
-    <% end %>
+    <div class="venue-search-zipcode">
+      By zipcode:
+      <%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %>
+        <%= label_tag :zipcode %>
+        <%= text_field :zipcode, params[:zipcode] %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
   </div>
 
   <br><br><br>
 
 </div>
-
-<!--
-<h4>OR create your own:</h4>
-
-<div>
-  <%= form_for @venue do |f| %>
-    <h3>ADD A NEW VENUE</h3>
-
-    <div><%= f.label :name %></div>
-    <div><%= f.text_field :name %></div>
-    <div><%= f.label :city %></div>
-    <div><%= f.text_field :city %></div>
-    <div><%= f.label :state%></div>
-    <div><%= f.select :state, us_states %></div>
-
-    <div><%= f.submit "Add Venue!", class: "submit-button" %></div>
-  <% end %>
-</div> -->

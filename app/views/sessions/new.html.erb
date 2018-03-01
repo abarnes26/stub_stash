@@ -1,11 +1,14 @@
-<div class=login-container>
-  <h3>LOG IN</h3>
-  <%= form_tag({}, {:id => "new-account-form"})  %>
+<div class="session-new-page">
+  <div class="login-container">
 
-    <div><%= label_tag :email %></div>
-    <div><%= text_field_tag :email %></div>
-    <div><%= label_tag :password %></div>
-    <div><%= password_field_tag :password %></div>
+    <h3 class="login-title">LOG IN:</h3>
+    <%= form_tag({}, {:id => "new-account-form", class: "login-form"})  %>
 
-    <div><%= submit_tag "Sign In", class: "submit-button" %></div><br>
+      <div class="login-field"><%= label_tag :email, "Email:" %></div>
+      <div class="login-field"><%= text_field_tag :email %></div>
+      <div class="login-field"><%= label_tag :password, "Password:" %></div>
+      <div class="login-field"><%= password_field_tag :password %></div>
+
+      <div class="login-field"><%= submit_tag "Sign In", class: "sign-in-button" %></div><br>
+  </div>
 </div>

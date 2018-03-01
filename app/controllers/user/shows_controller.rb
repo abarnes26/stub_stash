@@ -19,7 +19,7 @@ class User::ShowsController < ApplicationController
       redirect_to user_shows_path
     else
       flash[:notice] = "Sorry, something went wrong. Please try again"
-      render :new
+      redirect_to new_user_show_path
     end
   end
 

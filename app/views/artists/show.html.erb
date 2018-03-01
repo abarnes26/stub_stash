@@ -1,34 +1,34 @@
 <div class="artist-show-page">
-  <div class="artist-title">
-    <h1> <%=@artist.name%> </h1>
+  <div class="artist-show-container">
+
+    <div class="artist-title">
+      <h1> <%=@artist.name%> </h1>
+    </div>
+
+    <div class="artist-stats-count">
+      <% if @show_list.count == 0 %>
+        <h2>You haven't seen <%= @artist.name %> yet </h2>
+      <% elsif @show_list.count == 1 %>
+        <h2>You've seen <%= @artist.name %> 1 time!</h2>
+      <% else %>
+        <h2>You've seen <%= @artist.name %> <%=@show_list.count%> times! </h2>
+      <% end %>
+    </div>
+
+    <div class="artist-popular-artist">
+      <% unless @show_list.count == 0 %>
+         <h2>You've seen this artist most at <%= @most_visited_venue.name %> </h2>
+      <% end %>
+    </div>
+
+    <div class="show-list">
+      <% @show_list.each do |show| %>
+        <div class="show">
+          Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
+          Venue: <%= show.venue.name %>
+          <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="artist-stats-count">
-    <% if @show_list.count == 0 %>
-      <h2>You haven't seen <%= @artist.name %> yet </h2>
-    <% elsif @show_list.count == 1 %>
-      <h2>You've seen <%= @artist.name %> 1 time!</h2>
-    <% else %>
-      <h2>You've seen <%= @artist.name %> <%=@show_list.count%> times! </h2>
-    <% end %>
-  </div>
-
-  <div class="artist-popular-artist">
-    <% unless @show_list.count == 0 %>
-       <h2>You've seen this artist most at <%= @most_visited_venue.name %> </h2>
-    <% end %>
-  </div>
-
-  <div class="show-list">
-    <% @show_list.each do |show| %>
-      <div class="show">
-        Date: <%= show.date.strftime("%m/%d/%Y") %><br><br>
-        Venue: <%= show.venue.name %>
-        <%= link_to "-", user_show_path(show), method: :delete, class: 'delete-show-button' %>
-      </div>
-    <% end %>
-  </div>
-
-
-
 </div>

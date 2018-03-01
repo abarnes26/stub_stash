@@ -15,6 +15,8 @@ feature "A registered user visits the new venues page" do
         click_button "Search"
       end
 
+      save_and_open_page
+
       expect(current_path).to eq(jambase_find_by_name_path)
 
       within first(".venue-container") do

@@ -1,18 +1,26 @@
+<div class="new-show-page">
 
-<%= link_to "Add an Artist", new_artist_path %>
-<%= link_to "Add a Venue", new_venue_path %>
+  <div class="new-show-container">
 
-  <%= form_for @show, :url => user_shows_path do |f| %>
-    <h3>ADD A SHOW</h3>
+    <div class="new-show-links">
+      <%= link_to "Add an Artist", new_artist_path, class: "new-show-link"%>
+      <%= link_to "Add a Venue", new_venue_path, class: "new-show-link" %>
+    </div>
 
-    <div><%= f.label :artist %></div>
-    <div><%= f.select :artist, current_user.artists.collect {|artist| artist.name} %></div>
-    <div><%= f.label :venue %></div>
-    <div><%= f.select :venue, @venues.collect {|venue| venue.name} %></div>
-    <div><%= f.label :date %></div>
-    <div><%= f.date_field :date %></div>
+    <div class="new-show-form">
+      <%= form_for @show, :url => user_shows_path do |f| %>
+        <h3>ADD A SHOW</h3>
 
-    <div><%= f.submit "Add Show!", class: "submit-button" %></div>
-  <% end %>
+        <div><%= f.label :artist , class: "new-show-field"%></div>
+        <div><%= f.select :artist, current_user.artists.collect {|artist| artist.name}, class: "new-show-field" %></div>
+        <div><%= f.label :venue %></div>
+        <div><%= f.select :venue, @venues.collect {|venue| venue.name} %></div>
+        <div><%= f.label :date %></div>
+        <div><%= f.date_field :date %></div><br>
+
+        <div><%= f.submit "Add Show!", class: "submit-button" %></div>
+      <% end %>
+    </div>
+  </div>
 
 </div>

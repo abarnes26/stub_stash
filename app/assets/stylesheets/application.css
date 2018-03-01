@@ -54,15 +54,18 @@
   }
 
   .welcome-container {
-    align-content: center;
+    background-image: url("https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3acdc9ebaa62c41d40a8f1484b9a7943&auto=format&fit=crop&w=2550&q=80");
+    background-size: cover;
+    height: 1000px;
+    width: auto;
+    display: block;
   }
 
   .welcome-text-container {
-    z-index: 1;
-    position:absolute;
-    bottom: 45%;
-    left: 17%;
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    position:relative;
+    top: 15%;
   }
 
   .welcome-text {
@@ -94,6 +97,8 @@
   .stash-buttons {
     display: flex;
     flex-flow: row;
+    position: relative;
+    top: 5%;
     justify-content: center;
   }
 
@@ -115,14 +120,21 @@
     display: flex;
     justify-content: space-around;
     color: white;
+    position: relative;
+    top: 4%;
+    margin-bottom: 50px;
+    font-size: 20px;
   }
 
   .fake-class{
   }
 
   .flash-message {
-    position: relative;
-    left: 37%;
+    display: block;
+    position: absolute;
+    left: 2%;
+    top: 14%;
+    text-align: center;
     justify-content: center;
     font-family: Arial;
     font-weight: bold;
@@ -133,6 +145,13 @@
     background-color: rgb(32, 175, 67);
     border-radius: 20px;
     padding: 10px 25px;
+    position: relative;
+    border: 2px solid black;
+    color: black;
+  }
+
+  .stash-add-button:hover {
+    background-color: rgb(55, 211, 88);
   }
 
   .stash-add-button a {
@@ -140,6 +159,7 @@
     text-decoration: none;
     font-family: Arial;
     font-weight: bolder;
+    padding: inherit;
   }
 
   body {
@@ -150,6 +170,8 @@
   .stash {
     background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80");
     background-size: cover;
+    height: 1000px;
+    width: auto;
     background-position: calc(100% - 0px) calc(0% - 250px);
   }
 
@@ -162,6 +184,8 @@
   .artist-list-show {
     background-image: url("https://images.unsplash.com/photo-1453090927415-5f45085b65c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a281f105ebc13c0450a98c2e9b681fcc&auto=format&fit=crop&w=1462&q=80");
     background-size: cover;
+    height: 1000px;
+    width: auto;
   }
 
   .artist-list {
@@ -184,8 +208,25 @@
   .venue-list-show {
     background-image: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=2550&q=80");
     background-size: cover;
-    height: 700px;
+    height: 900px;
     width: auto;
+    background-position: calc(100% - 0px) calc(0% - 400px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venue-list-container {
+    background-color: rgba(24, 62, 122, .7);
+    position: relative;
+    top: 5%;
+    height: 90%;
+    width: 700px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
   }
 
   .venue-show-page {
@@ -193,7 +234,26 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .venue-list {
+    overflow: scroll;
+  }
+
+  .delete-show-button {
+    padding: 5px;
+    background-color: rgba(196, 1, 44, .4);
+    width: 100px;
+    height: 8px;
+    border-radius: 8px;
+    font-size: 11px;
+  }
+
+  .delete-show-button:hover {
+    background-color: rgb(198, 1, 45);
   }
 
   .artist-show-page {
@@ -201,13 +261,160 @@
     background-size: cover;
     height: 700px;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .venue-lookup-page {
     background-image: url("https://images.unsplash.com/photo-1470345961863-06d4b12d93b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b346a2851e2336eaae0b4877b36a7357&auto=format&fit=crop&w=1489&q=80");
     background-size: cover;
+    height: 900px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .venue-lookup-container {
+    position: relative;
+    top: 20%;
+    height: 35%;
+    width: 25%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venue-search-name, .venue-search-zipcode {
+    padding: 20px;
+  }
+
+  .venue-container {
+    background-color: rgba(195, 214, 244, .3);
+    position: relative;
+    top: 5%;
+    height: 90%;
+    width: 700px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+  }
+
+  .venue-listing-show {
+    background-color: rgba(5, 26, 33, .9);
+    width: 400px;
+    margin: 5% 0%;
+    padding: 2%;
+    border: 3px black solid;
+    color: white;
+    text-align: center;
+  }
+
+  .venue-listing {
+    background-color: rgba(5, 26, 33, .9);
+    width: 500px;
+    margin: 5% 0%;
+    padding: 2%;
+    border: 3px black solid;
+    color: white;
+  }
+
+  .venue-criteria {
+    color: black
+  }
+
+  .session-new-page {
+    background-image: url("https://images.unsplash.com/photo-1448485780098-7e0b78781fc1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46c162403dfca4c452292ad0509a2a40&auto=format&fit=crop&w=1489&q=80");
+    background-size: cover;
+    height: 400px;
+    width: auto;
+    background-position: calc(100% - 0px) calc(0% - 500px);
+    display: flex;
+    justify-content: center;
+  }
+
+  .user-new-page {
+    background-image: url("https://images.unsplash.com/photo-1448485780098-7e0b78781fc1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=46c162403dfca4c452292ad0509a2a40&auto=format&fit=crop&w=1489&q=80");
+    background-size: cover;
     height: 700px;
     width: auto;
+    background-position: calc(100% - 0px) calc(0% - 300px);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 45%;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+    background-color: rgba(5, 26, 33, .9);
+    border: white 2px solid;
+  }
+
+  .link-to-login {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user-new-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+    height: 400px;
+    width: 40%;
+    background-color: rgba(5, 26, 33, .9);
+    border: white 2px solid;
+  }
+
+  .user-new-field {
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
+    padding: 10px;
+  }
+
+  .login-form {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .login-title {
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .login-field {
+    padding: 4%;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
+  }
+
+  .sign-in-button {
+    background-color: rgb(122, 184, 191);
+    font-family: Arial Black;
+    font-size: 16px;
+    border: 2px lightgrey solid;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: auto;
   }
 
   a {
@@ -215,6 +422,77 @@
     color: white;
   }
 
-  #map {
-    background-color: rgb(229, 227, 223);
+  .new-show-page {
+    background-image: url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-0.3.5&s=5305bbef8c3d160b06491d89478c16ca&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: calc(100% - 0px) calc(0% - 200px);
+    height: 700px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-show-container {
+    position: relative;
+    top: 15%;
+    height: 35%;
+    width: 20%;
+    padding: 3%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+  }
+
+  .new-show-links {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .new-show-link {
+    background-color: rgb(122, 184, 191);
+    color: black;
+    padding: 7px;
+    border: solid white 1px;
+    font-family: Arial;
+  }
+
+  .new-show-link:hover {
+    background-color: rgb(146, 223, 232)
+  }
+
+  .new-show-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  select {
+    width: 120px;
+  }
+
+  .new-artist-page {
+    background-image: url("https://images.unsplash.com/photo-1501962679900-bea61483313b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f168084999e671042574321f35b572aa&auto=format&fit=crop&w=1349&q=80");
+    background-size: cover;
+    background-position: calc(100% - 0px) calc(0% - 200px);
+    height: 700px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-artist-container {
+    position: relative;
+    top: 20%;
+    height: 35%;
+    width: 25%;
+    border: 3px solid black;
+    background-color: rgba(5, 26, 33, .9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-artist-form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
   }

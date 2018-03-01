@@ -1,11 +1,18 @@
 <div class="venue-list-show">
-  <h2>Here are the current venues</h2>
+  <div class="venue-list-container">
+    <div class="venue-list-title">
+      <h2>Here are the venues you've added:</h2>
+    </div>
 
-  <div class="venue-add-button-container">
-    <%= link_to "Add Venue", new_venue_path %>
+    <div class="venue-add-button-container">
+      <%= link_to "Add Venue", new_venue_path, class: "new-show-link" %>
+    </div>
+
+    <div class="venue-listing-show">
+      <% @venues.each do |venue| %>
+        <p><%= link_to "#{venue.name} - #{venue.city}, #{venue.state}", venue_path(venue)%></p>
+        <%= link_to " Remove ", venue_path(venue), method: :delete, class: 'delete-show-button' %>
+      <% end %>
+    </div>
   </div>
-
-  <% @venues.each do |venue| %>
-    <p><%= link_to venue.name, venue_path(venue)%> (<%= venue.city%>, <%= venue.state %>)
-  <% end %>
 </div>

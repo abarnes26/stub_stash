@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Congratulations! Your account has been created!"
-      redirect_to dashboard_path
+      redirect_to user_shows_path
     else
       flash[:notice] = "User was not created"
       render :new

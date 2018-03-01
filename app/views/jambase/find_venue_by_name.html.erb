@@ -1,11 +1,12 @@
 <div class="venue-lookup-page">
-  <h2>Lookup venues here: </h2>
 
-  <h3>-Venues with the name: <%= @name %> -</h3><br>
+  <div class="venue-container">
 
-  <div class="venue-listings">
+    <div class="venue-criteria">
+      <h1>-Venues with the name: <%= @name %> -</h1><br>
+    </div>
     <% @venues.each do |venue| %>
-      <div class="venue-container">
+      <div class="venue-listing">
         <h4>Name: <%= venue[:Name] %></h4>
         <p>Address: <%= venue[:Address] %></p>
         <p>City: <%= venue[:City] %></p>
