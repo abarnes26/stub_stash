@@ -3,21 +3,10 @@
     <h2>Here are the artists you've added:</h2>
   </div>
 
-  <div class="artist-list">
-    <% current_user.reload.artists.each do |artist| %>
-      <div class="artist">
-        <%= link_to artist.name, artist_path(artist) %><br>
-        <%= link_to " Remove ", user_artist_path(artist), method: :delete, class: 'delete-show-button' %>
-      </div>
-    <% end %>
-  </div><br>
-
   <div class="add-artist-container">
     <div class="add-raw-artist">
-      <%= link_to "Add an Artist", new_artist_path, class: "add-artist-button" %>
+      <%= link_to "Add an Artist", new_artist_path, class: "add-artist-link" %>
     </div>
-
-    <h3>-OR-</h3>
 
     <div class="import-artist-button">
       <% unless current_user.spotify_token %>
@@ -27,4 +16,14 @@
       <% end %>
     </div>
   </div>
+
+  <div class="artist-list">
+    <% current_user.reload.artists.each do |artist| %>
+      <div class="artist">
+        <%= link_to artist.name, artist_path(artist) %><br>
+        <%= link_to " Remove ", user_artist_path(artist), method: :delete, class: 'delete-show-button' %>
+      </div>
+    <% end %>
+  </div><br>
+
 </div>

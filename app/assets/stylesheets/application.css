@@ -126,9 +126,6 @@
     font-size: 20px;
   }
 
-  .fake-class{
-  }
-
   .flash-message {
     display: block;
     position: absolute;
@@ -186,6 +183,8 @@
     background-size: cover;
     height: 1000px;
     width: auto;
+    background-position: calc(100% - 0px) calc(0% - 100px);
+
   }
 
   .artist-list {
@@ -447,7 +446,7 @@
     justify-content: space-around;
   }
 
-  .new-show-link {
+  .new-show-link, .add-artist-link {
     background-color: rgb(122, 184, 191);
     color: black;
     padding: 7px;
@@ -495,4 +494,10 @@
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+  }
+
+  .add-artist-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
   }

@@ -7,7 +7,10 @@
 
     <div class="artist-stats-count">
       <% if @show_list.count == 0 %>
-        <h2>You haven't seen <%= @artist.name %> yet </h2>
+        <h2>You haven't added any shows for <%= @artist.name %> yet! </h2>
+        <div class="stash-buttons">
+          <div class="stash-add-button"><%= link_to "Add A New Show!", new_user_show_path %></div>
+        </div><br>
       <% elsif @show_list.count == 1 %>
         <h2>You've seen <%= @artist.name %> 1 time!</h2>
       <% else %>
