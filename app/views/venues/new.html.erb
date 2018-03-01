@@ -5,7 +5,7 @@
 
     <div class="venue-search-name">
       By name:
-      <%= form_tag( '/jambase/find-by-name', :method => 'get') do %>
+      <%= form_tag( '/jambase/find-by-name', :method => 'get') do %><br>
         <%= label_tag :name %>
         <%= text_field :name, params[:name] %>
         <%= submit_tag "Search" %>
@@ -14,7 +14,7 @@
 
     <div class="venue-search-zipcode">
       By zipcode:
-      <%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %>
+      <%= form_tag( '/jambase/find-by-zipcode', :method => 'get') do %><br>
         <%= label_tag :zipcode %>
         <%= text_field :zipcode, params[:zipcode] %>
         <%= submit_tag "Search" %>

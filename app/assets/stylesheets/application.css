@@ -22,7 +22,6 @@
 
   .nav-bar-title, .nav-bar-session-container {
     display: inline-flex;
-
   }
 
   .nav-bar-link {
@@ -98,7 +97,7 @@
     display: flex;
     flex-flow: row;
     position: relative;
-    top: 5%;
+    /*top: 5%;*/
     justify-content: center;
   }
 
@@ -122,7 +121,7 @@
     color: white;
     position: relative;
     top: 4%;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     font-size: 20px;
   }
 
@@ -130,7 +129,7 @@
     display: block;
     position: absolute;
     left: 2%;
-    top: 14%;
+    top: 16%;
     text-align: center;
     justify-content: center;
     font-family: Arial;
@@ -167,7 +166,7 @@
   .stash {
     background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7988cfd6c74ccf6e16094939d87dc274&auto=format&fit=crop&w=1653&q=80");
     background-size: cover;
-    height: 800px;
+    height: 850px;
     width: auto;
     background-position: calc(100% - 0px) calc(0% - 250px);
   }
@@ -181,7 +180,7 @@
   .artist-list-show {
     background-image: url("https://images.unsplash.com/photo-1453090927415-5f45085b65c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a281f105ebc13c0450a98c2e9b681fcc&auto=format&fit=crop&w=1462&q=80");
     background-size: cover;
-    height: 900px;
+    height: 850px;
     width: auto;
     background-position: calc(100% - 0px) calc(0% - 100px);
 
@@ -482,7 +481,7 @@
     position: relative;
     top: 20%;
     height: 35%;
-    width: 25%;
+    width: 35%;
     border: 3px solid black;
     background-color: rgba(5, 26, 33, .9);
     display: flex;
