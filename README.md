@@ -10,4 +10,4 @@ Take your cumbersome ticket collection and upload it to an interactive database.
 * Pages rendered with HTML & CSS
 
 ## Schema 
-![alt-text](https://drive.google.com/file/d/1Cp9Dkg8bN5I8AybL6FDNWqYgix14xBIo/view?usp=sharing)
+![alt-text](<img src='https://i.imgur.com/XhcQ4SL.jpg' />)
