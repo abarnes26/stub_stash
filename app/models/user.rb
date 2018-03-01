@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 5, maximum: 120}, on: :update, allow_blank: true
 
   enum role: ["user", "admin"]
-  
+
   def visited_venues(user)
     venue_list(user).map { |venue| [venue.name, venue.latitude, venue.longitude] }
   end

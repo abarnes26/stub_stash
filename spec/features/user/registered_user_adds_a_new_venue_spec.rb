@@ -11,11 +11,9 @@ feature "A registered user visits the new venues page" do
       expect(UserVenue.count).to eq(0)
 
       within(".venue-search-name") do
-        fill_in "name[]", with: "Red Rocks"
+        fill_in "name[]", with: "Red Rocks Amphitheatre"
         click_button "Search"
       end
-
-      save_and_open_page
 
       expect(current_path).to eq(jambase_find_by_name_path)
 
