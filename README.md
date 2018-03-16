@@ -2,6 +2,9 @@
 
 Take your cumbersome ticket collection and upload it to an interactive database.  This application allows you to load all of your live music events into your profile, and organize your data by artist and venue as well as viewing all of your attended venues on a single map.
 
+## Production
+See the Application hosted on heroku [here](https://stub-stash.herokuapp.com/)
+
 ## Tech Stacks
 * Built with Ruby on Rails
 * Database built with Postgresql
