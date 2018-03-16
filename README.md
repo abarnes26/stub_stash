@@ -4,7 +4,7 @@ Take your cumbersome ticket collection and upload it to an interactive database.
 
 ## Production
 See the Application hosted on heroku [here](https://stub-stash.herokuapp.com/) 
-(Not compatible with mobile browsers)
+- Not compatible with mobile browsers -
 
 ## Tech Stacks
 * Built with Ruby on Rails
