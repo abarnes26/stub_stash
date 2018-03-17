@@ -14,7 +14,7 @@
         <div><%= f.label :artist , class: "new-show-field"%></div>
         <div><%= f.select :artist, current_user.artists.collect {|artist| artist.name}, class: "new-show-field" %></div>
         <div><%= f.label :venue %></div>
-        <div><%= f.select :venue, @venues.collect {|venue| venue.name} %></div>
+        <div><%= f.select :venue, current_user.venues.collect {|venue| venue.name} %></div>
         <div><%= f.label :date %></div>
         <div><%= f.date_field :date %></div><br>
 
