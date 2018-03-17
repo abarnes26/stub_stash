@@ -1,60 +1,42 @@
-# README
+# Stub Stash
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Take your cumbersome ticket collection and upload it to an interactive database.  This application allows you to load all of your live music events into your profile, and organize your data by artist and venue as well as viewing all of your attended venues on a single map.
 
-Things you may want to cover:
+## Production
+See the Application hosted on heroku [here](https://stub-stash.herokuapp.com/) 
+- Not compatible with mobile browsers -
 
-* Ruby version
+## Tech Stacks
+* Built with Ruby on Rails
+* Database built with Postgresql
+* Testing suite uses Rspec and Capybara
+[![Coverage Status](https://coveralls.io/repos/github/abarnes26/stub_stash/badge.svg?branch=master)](https://coveralls.io/github/abarnes26/stub_stash?branch=master)
+* Pages rendered with HTML & CSS
 
-* System dependencies
+## APIs
+* Spotify - Easily import a user's followed artists to their "Artist" page.
+* Google Maps - Render locations of previously visited music venues on a google map on the user's dashboard.
+* Jambase - Allows the user to search and locate venues based on zipcode or name and import those into their profile.
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Creating a new account
+As a new user landing on the home page, create a new account through the "Sign Up" link using your email and password of your choice.  After successfully creating an account, the user will be redirected to their dashboard.
 
-* Database initialization
+### Adding Artists
+Navigate to the "Artists" page via the link on the Nav Bar.  Users can add artists to their profile manually or link to their Spotify account to import their "Following" artists instantly.
 
-* How to run the test suite
+### Adding Venues
+Navigate to the "Venues" page via the link on the Nav Bar.  Users can search venues via zipcode or the venues name.  After selecting their desired venue it will be imported into the database along with other information provided by Jambase including address, latitude & longitude, and local website.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Adding Shows
+After a user has added an artist and a venue to their profile, they can now add shows via the "Add a new show" on the dashboard.  Select the artist, venue, and date to create a new show.  After the show has been created, the user will now be redirected to the dashboard and should see their show displayed on the google map, as well as a list of their shows on the side of the page.
 
-* Deployment instructions
+## Ideas for future improvement
+- User interaction -- Two users who have been to the same show should be able to see each other's profile.
+- Show Page -- Create a page for each individual show with the abilities add comments and photos/ interact with other users.
+- Email Password Recovery -- If the user forgets their password, a password reset link should be emailed to them.
+- Event Suggestions -- Upcoming events should be suggested to the user based on their location and/or artist and venues.
 
-* ...
-
-Feature Delivery
-1. Completion
-
-3: Developer completed all the user stories and requirements set by the client.
-
-
-2. Organization
-
-3: Developer used a project management tool to keep their project organized.
-
-
-Technical Quality
-1. Test-Driven Development
-
-3: Project shows adequate testing (90% - 95% coverage).
-
-
-
-2. Code Quality
-
-3: Project demonstrates solid code quality and MVC principles.
-
-
-
-Product Experience
-1. User Experience
-
-4: Project exhibits a production-ready and polished UX.
-3: Project exhibits a production-ready user experience.
-
-
-
-2. Performance
-
-4: Project pages load on average under 300 milliseconds.
+## Database Schema
+<img src='https://i.imgur.com/XhcQ4SL.jpg'>
