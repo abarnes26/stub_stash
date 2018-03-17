@@ -950,6 +950,14 @@
         null,
         null
       ],
+      "/Users/papercrane01/Documents/personal_projects/show_tracker/app/models/user_venue.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/papercrane01/Documents/personal_projects/show_tracker/app/controllers/artists_controller.rb": [
         1,
         null,
@@ -1046,14 +1054,6 @@
         0,
         null,
         null,
-        null,
-        null
-      ],
-      "/Users/papercrane01/Documents/personal_projects/show_tracker/app/models/user_venue.rb": [
-        1,
-        1,
-        1,
-        1,
         null,
         null
       ],
@@ -1194,6 +1194,6 @@
         null
       ]
     },
-    "timestamp": 1519918878
+    "timestamp": 1521300168
   }
 }
